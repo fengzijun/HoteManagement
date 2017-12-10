@@ -56,8 +56,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.xqBook);
           this.Property(t => t.Pming);
           this.Property(t => t.isXz);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

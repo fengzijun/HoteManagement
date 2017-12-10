@@ -6,19 +6,17 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class room_feature : BaseEntity
+    public partial class room_feature : BaseEntity
     {
         
         public string room_feature_name { get; set; }
         public string remark { get; set; }
-        
-        
     }
 }

@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class UserInfo : BaseEntity
+    public partial class UserInfo : BaseEntity
     {
         
         public string userID { get; set; }
@@ -30,7 +30,5 @@ namespace HoteManagement.Domain
         public string meark { get; set; }
         public Nullable<int> manageID { get; set; }
         public string truename { get; set; }
-        
-        
     }
 }

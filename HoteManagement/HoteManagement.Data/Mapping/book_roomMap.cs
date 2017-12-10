@@ -35,14 +35,12 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.real_price);
           this.Property(t => t.state_id);
           this.Property(t => t.real_num);
-          this.Property(t => t.remark).HasMaxLength(null);
+          this.Property(t => t.remark);
           this.Property(t => t.room_number).HasMaxLength(20);
           this.Property(t => t.back_deposit);
           this.Property(t => t.userid).HasMaxLength(50);
           this.Property(t => t.Accounts).HasMaxLength(50);
           this.Property(t => t.CpID);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

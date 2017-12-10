@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class order_infor : BaseEntity
+    public partial class order_infor : BaseEntity
     {
         
         public string order_no { get; set; }

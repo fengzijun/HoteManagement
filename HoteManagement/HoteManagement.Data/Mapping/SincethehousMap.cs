@@ -20,17 +20,15 @@ namespace HoteManagement.Data.Mapping
           this.HasKey(t => t.Id);
           this.Property(t => t.hs_Numberno).HasMaxLength(50);
           this.Property(t => t.hs_room).HasMaxLength(50);
-          this.Property(t => t.hs_yuany).HasMaxLength(null);
+          this.Property(t => t.hs_yuany);
           this.Property(t => t.hs_date);
           this.Property(t => t.hs_ksDate);
           this.Property(t => t.hs_ylDate).HasMaxLength(50);
           this.Property(t => t.hs_Documentno).HasMaxLength(50);
           this.Property(t => t.hs_type);
           this.Property(t => t.hs_people).HasMaxLength(50);
-          this.Property(t => t.hs_Result).HasMaxLength(null);
-          this.Property(t => t.hs_remaker).HasMaxLength(null);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
+          this.Property(t => t.hs_Result);
+          this.Property(t => t.hs_remaker);
        }
     }
 }

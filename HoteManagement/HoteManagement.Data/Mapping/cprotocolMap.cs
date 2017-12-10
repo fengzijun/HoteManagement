@@ -39,8 +39,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.editUser).HasMaxLength(50);
           this.Property(t => t.verifyUser);
           this.Property(t => t.Details).HasMaxLength(500);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

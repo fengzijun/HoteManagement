@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class room_number : BaseEntity
+    public partial class room_number : BaseEntity
     {
         
         public string Rn_flloeld { get; set; }
@@ -28,7 +28,5 @@ namespace HoteManagement.Domain
         public Nullable<int> Room_sort { get; set; }
         public Nullable<int> Rn_Tobe { get; set; }
         public string Rn_suo { get; set; }
-        
-        
     }
 }

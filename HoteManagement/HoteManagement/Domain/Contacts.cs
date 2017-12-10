@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class Contacts : BaseEntity
+    public partial class Contacts : BaseEntity
     {
         
         public string Accounts { get; set; }
@@ -33,7 +33,5 @@ namespace HoteManagement.Domain
         public string Likes { get; set; }
         public string Remark { get; set; }
         public Nullable<int> Post { get; set; }
-        
-        
     }
 }

@@ -30,8 +30,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Hs_End);
           this.Property(t => t.Hs_zdr);
           this.Property(t => t.Hs_Reamrk).HasMaxLength(500);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

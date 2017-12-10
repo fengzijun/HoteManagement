@@ -34,10 +34,8 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.ga_date);
           this.Property(t => t.ga_Type);
           this.Property(t => t.ga_sum_price);
-          this.Property(t => t.Remark).HasMaxLength(null);
+          this.Property(t => t.Remark);
           this.Property(t => t.ga_roomNumber).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

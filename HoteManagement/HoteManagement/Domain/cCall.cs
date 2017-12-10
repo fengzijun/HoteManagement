@@ -6,19 +6,17 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class cCall : BaseEntity
+    public partial class cCall : BaseEntity
     {
         
         public string callName { get; set; }
         public string Remark { get; set; }
-        
-        
     }
 }

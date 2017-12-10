@@ -6,20 +6,18 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class SuoRoom : BaseEntity
+    public partial class SuoRoom : BaseEntity
     {
         
         public string SuoType { get; set; }
         public string RoomNumber { get; set; }
         public string SuoMa { get; set; }
-        
-        
     }
 }

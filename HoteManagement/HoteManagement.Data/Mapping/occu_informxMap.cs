@@ -47,8 +47,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.lordRoomid).HasMaxLength(50);
           this.Property(t => t.continuelive);
           this.Property(t => t.phonenum).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

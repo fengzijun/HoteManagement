@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class member : BaseEntity
+    public partial class member : BaseEntity
     {
         
         public string Mid { get; set; }
@@ -37,7 +37,5 @@ namespace HoteManagement.Domain
         public Nullable<System.DateTime> AddDate { get; set; }
         public string addUser { get; set; }
         public Nullable<System.DateTime> XqTime { get; set; }
-        
-        
     }
 }

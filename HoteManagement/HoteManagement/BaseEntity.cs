@@ -11,11 +11,7 @@ namespace HoteManagement
         {
         }
 
-        public virtual long Id { get; set; }
-
-        public virtual DateTime createtime { get; set; }
-
-        public virtual DateTime updatetime { get; set; }
+        public virtual int Id { get; set; }
 
         public override bool Equals(object obj)
         {

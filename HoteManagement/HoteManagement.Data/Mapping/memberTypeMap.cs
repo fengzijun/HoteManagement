@@ -44,8 +44,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.StaPrice);
           this.Property(t => t.XqTime);
           this.Property(t => t.machJf);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

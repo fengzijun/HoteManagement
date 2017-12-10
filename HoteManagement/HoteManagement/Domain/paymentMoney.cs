@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class paymentMoney : BaseEntity
+    public partial class paymentMoney : BaseEntity
     {
         
         public Nullable<decimal> pm_Money { get; set; }
@@ -22,7 +22,5 @@ namespace HoteManagement.Domain
         public string pm_roomNumber { get; set; }
         public Nullable<System.DateTime> pm_Date { get; set; }
         public string pm_Remaker { get; set; }
-        
-        
     }
 }

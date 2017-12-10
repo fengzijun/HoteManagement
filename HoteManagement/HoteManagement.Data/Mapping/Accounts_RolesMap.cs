@@ -21,8 +21,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.RoleID);
           this.Property(t => t.title).HasMaxLength(100);
           this.Property(t => t.Description).HasMaxLength(500);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

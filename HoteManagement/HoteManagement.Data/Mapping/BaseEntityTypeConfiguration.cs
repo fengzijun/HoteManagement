@@ -15,9 +15,7 @@ namespace HoteManagement.Data.Mapping
         /// </summary>
         protected virtual void PostInitialize()
         {
-            this.Property(t => t.createtime);
-
-            this.Property(t => t.updatetime);
+          
         }
     }
 }

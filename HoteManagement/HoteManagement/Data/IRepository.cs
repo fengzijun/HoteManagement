@@ -46,7 +46,7 @@ namespace HoteManagement.Data
         ///
         /// </summary>
         /// <param name="id"></param>
-        void Delete(long id);
+        void Delete(int id);
 
         /// <summary>
         /// Delete entity

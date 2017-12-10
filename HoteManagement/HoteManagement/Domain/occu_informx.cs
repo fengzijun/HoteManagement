@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class occu_informx : BaseEntity
+    public partial class occu_informx : BaseEntity
     {
         
         public string occ_no { get; set; }
@@ -45,7 +45,5 @@ namespace HoteManagement.Domain
         public string lordRoomid { get; set; }
         public Nullable<int> continuelive { get; set; }
         public string phonenum { get; set; }
-        
-        
     }
 }

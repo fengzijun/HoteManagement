@@ -6,20 +6,18 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class RoleMenu : BaseEntity
+    public partial class RoleMenu : BaseEntity
     {
         
-        public Nullable<long> RoleID { get; set; }
-        public Nullable<long> Menu_id { get; set; }
-        public Nullable<long> Menu_pid { get; set; }
-        
-        
+        public Nullable<int> RoleID { get; set; }
+        public Nullable<int> Menu_id { get; set; }
+        public Nullable<int> Menu_pid { get; set; }
     }
 }

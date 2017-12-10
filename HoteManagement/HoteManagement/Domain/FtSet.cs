@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class FtSet : BaseEntity
+    public partial class FtSet : BaseEntity
     {
         
         public int Lwidth { get; set; }
@@ -77,7 +77,5 @@ namespace HoteManagement.Domain
         public Nullable<int> zdSize { get; set; }
         public string zdColor { get; set; }
         public Nullable<int> icoColor { get; set; }
-        
-        
     }
 }

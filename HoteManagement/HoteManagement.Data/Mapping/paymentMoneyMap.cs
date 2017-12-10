@@ -23,9 +23,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.pm_Name).HasMaxLength(50);
           this.Property(t => t.pm_roomNumber).HasMaxLength(50);
           this.Property(t => t.pm_Date);
-          this.Property(t => t.pm_Remaker).HasMaxLength(null);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
+          this.Property(t => t.pm_Remaker);
        }
     }
 }

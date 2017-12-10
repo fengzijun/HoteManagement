@@ -6,15 +6,21 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class book_room : BaseEntity
+    public partial class book_room : BaseEntity
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public book_room()
+        {
+            this.Book_Rdetail = new HashSet<Book_Rdetail>();
+        }
+    
         
         public string book_no { get; set; }
         public string book_Name { get; set; }
@@ -39,7 +45,8 @@ namespace HoteManagement.Domain
         public string userid { get; set; }
         public string Accounts { get; set; }
         public Nullable<int> CpID { get; set; }
-        
-        
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Book_Rdetail> Book_Rdetail { get; set; }
     }
 }

@@ -38,8 +38,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.isOcczf);
           this.Property(t => t.isCy);
           this.Property(t => t.MarkSuo).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

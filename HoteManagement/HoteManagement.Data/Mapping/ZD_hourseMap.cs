@@ -23,8 +23,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.tixing);
           this.Property(t => t.beigin);
           this.Property(t => t.endtime);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

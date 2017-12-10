@@ -18,10 +18,8 @@ namespace HoteManagement.Data.Mapping
        public RemakerMap()
        {
           this.HasKey(t => t.Id);
-          this.Property(t => t.remaker1).HasMaxLength(null);
+          this.Property(t => t.remaker1);
           this.Property(t => t.type);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

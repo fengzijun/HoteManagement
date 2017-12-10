@@ -27,8 +27,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.IsEveryDay);
           this.Property(t => t.DayComm);
           this.Property(t => t.CommRemark).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

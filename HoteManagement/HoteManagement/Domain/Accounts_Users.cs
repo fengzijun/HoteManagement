@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class Accounts_Users : BaseEntity
+    public partial class Accounts_Users : BaseEntity
     {
         
         public string UserID { get; set; }
@@ -28,7 +28,5 @@ namespace HoteManagement.Domain
         public Nullable<bool> Activity { get; set; }
         public string UserType { get; set; }
         public Nullable<int> Style { get; set; }
-        
-        
     }
 }

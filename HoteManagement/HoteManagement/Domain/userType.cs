@@ -6,21 +6,19 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class userType : BaseEntity
+    public partial class userType : BaseEntity
     {
         
         public Nullable<int> typeid { get; set; }
         public string typename { get; set; }
         public Nullable<decimal> typeprice { get; set; }
         public string remark { get; set; }
-        
-        
     }
 }

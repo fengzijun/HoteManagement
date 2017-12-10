@@ -22,8 +22,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.typename).HasMaxLength(50);
           this.Property(t => t.typeprice);
           this.Property(t => t.remark).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class account_goods : BaseEntity
+    public partial class account_goods : BaseEntity
     {
         
         public string ga_name { get; set; }
@@ -34,7 +34,5 @@ namespace HoteManagement.Domain
         public Nullable<int> ga_isjz { get; set; }
         public string ga_goodNo { get; set; }
         public Nullable<int> ga_isys { get; set; }
-        
-        
     }
 }

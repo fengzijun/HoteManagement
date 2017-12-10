@@ -29,11 +29,9 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.bairthday);
           this.Property(t => t.xihao).HasMaxLength(100);
           this.Property(t => t.address).HasMaxLength(100);
-          this.Property(t => t.meark).HasMaxLength(null);
+          this.Property(t => t.meark);
           this.Property(t => t.manageID);
           this.Property(t => t.truename).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

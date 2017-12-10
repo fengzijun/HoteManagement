@@ -148,7 +148,6 @@
     <Compile Include="Mapping\SincethehousMap.cs" />
     <Compile Include="Mapping\SuoRoomMap.cs" />
     <Compile Include="Mapping\SuoSysMap.cs" />
-    <Compile Include="Mapping\sysdiagramsMap.cs" />
     <Compile Include="Mapping\SysParamterMap.cs" />
     <Compile Include="Mapping\TypeSchemeMap.cs" />
     <Compile Include="Mapping\UserInfoMap.cs" />

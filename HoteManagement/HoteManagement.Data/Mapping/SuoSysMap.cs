@@ -21,8 +21,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.SuoTypeName).HasMaxLength(50);
           this.Property(t => t.IsComm);
           this.Property(t => t.IsBackSuo);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

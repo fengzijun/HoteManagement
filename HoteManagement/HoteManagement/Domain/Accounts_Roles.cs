@@ -6,20 +6,18 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class Accounts_Roles : BaseEntity
+    public partial class Accounts_Roles : BaseEntity
     {
         
-        public long RoleID { get; set; }
+        public int RoleID { get; set; }
         public string title { get; set; }
         public string Description { get; set; }
-        
-        
     }
 }

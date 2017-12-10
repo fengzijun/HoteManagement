@@ -24,8 +24,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.entry_unit).HasMaxLength(50);
           this.Property(t => t.entry_price);
           this.Property(t => t.entry_room).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class Entry : BaseEntity
+    public partial class Entry : BaseEntity
     {
         
         public string entry_name { get; set; }
@@ -22,7 +22,5 @@ namespace HoteManagement.Domain
         public string entry_unit { get; set; }
         public Nullable<decimal> entry_price { get; set; }
         public string entry_room { get; set; }
-        
-        
     }
 }

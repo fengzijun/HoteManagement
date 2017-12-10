@@ -6,18 +6,16 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class floor_ld : BaseEntity
+    public partial class floor_ld : BaseEntity
     {
         
         public string ld_Name { get; set; }
-        
-        
     }
 }

@@ -200,7 +200,6 @@
     <Compile Include="Domain\Sincethehous.cs" />
     <Compile Include="Domain\SuoRoom.cs" />
     <Compile Include="Domain\SuoSys.cs" />
-    <Compile Include="Domain\sysdiagrams.cs" />
     <Compile Include="Domain\SysParamter.cs" />
     <Compile Include="Domain\TypeScheme.cs" />
     <Compile Include="Domain\UserInfo.cs" />

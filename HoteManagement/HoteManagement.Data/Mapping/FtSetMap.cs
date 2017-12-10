@@ -79,8 +79,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.zdSize);
           this.Property(t => t.zdColor).HasMaxLength(10);
           this.Property(t => t.icoColor);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

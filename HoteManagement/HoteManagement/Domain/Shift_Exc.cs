@@ -6,19 +6,19 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class Shift_Exc : BaseEntity
+    public partial class Shift_Exc : BaseEntity
     {
         
-        public Nullable<long> UserId { get; set; }
-        public Nullable<long> Good_Account_Id { get; set; }
-        public Nullable<long> meth_pay_id { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public Nullable<int> Good_Account_Id { get; set; }
+        public Nullable<int> meth_pay_id { get; set; }
         public Nullable<int> shift_id { get; set; }
         public string shift_state { get; set; }
         public Nullable<decimal> shift_money { get; set; }
@@ -34,7 +34,5 @@ namespace HoteManagement.Domain
         public Nullable<decimal> ga_sum_price { get; set; }
         public string Remark { get; set; }
         public string ga_roomNumber { get; set; }
-        
-        
     }
 }

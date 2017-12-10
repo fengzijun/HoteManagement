@@ -6,19 +6,17 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class print : BaseEntity
+    public partial class print : BaseEntity
     {
         
         public string pritName { get; set; }
         public string priContent { get; set; }
-        
-        
     }
 }

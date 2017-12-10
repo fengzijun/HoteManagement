@@ -193,7 +193,7 @@ namespace HoteManagement.Data
         /// </summary>
         /// <param name="entity">Entity</param>
         /// <param name="id"></param>
-        public virtual void Delete(long id)
+        public virtual void Delete(int id)
         {
             try
             {

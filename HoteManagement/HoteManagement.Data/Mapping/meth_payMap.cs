@@ -22,9 +22,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.meth_is_ya);
           this.Property(t => t.meth_is_jie);
           this.Property(t => t.meth_sort);
-          this.Property(t => t.remark).HasMaxLength(null);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
+          this.Property(t => t.remark);
        }
     }
 }

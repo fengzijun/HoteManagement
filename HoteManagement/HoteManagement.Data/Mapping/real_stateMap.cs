@@ -20,11 +20,9 @@ namespace HoteManagement.Data.Mapping
           this.HasKey(t => t.Id);
           this.Property(t => t.tr_number).HasMaxLength(20);
           this.Property(t => t.tr_name).HasMaxLength(50);
-          this.Property(t => t.tr_remaker).HasMaxLength(null);
+          this.Property(t => t.tr_remaker);
           this.Property(t => t.back1).HasMaxLength(50);
           this.Property(t => t.back2).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

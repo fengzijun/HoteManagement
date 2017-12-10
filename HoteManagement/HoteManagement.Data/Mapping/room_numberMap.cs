@@ -25,13 +25,11 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Rn_room);
           this.Property(t => t.Rn_Type);
           this.Property(t => t.Rn_price);
-          this.Property(t => t.Rn_remaker).HasMaxLength(null);
+          this.Property(t => t.Rn_remaker);
           this.Property(t => t.Room_suod).HasMaxLength(10);
           this.Property(t => t.Room_sort);
           this.Property(t => t.Rn_Tobe);
           this.Property(t => t.Rn_suo).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

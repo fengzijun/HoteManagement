@@ -23,8 +23,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.passwords).HasMaxLength(100);
           this.Property(t => t.user_type);
           this.Property(t => t.pubdate);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

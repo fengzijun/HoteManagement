@@ -6,19 +6,17 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class sale_man : BaseEntity
+    public partial class sale_man : BaseEntity
     {
         
         public string sale_man_name { get; set; }
         public Nullable<decimal> sale_man_money { get; set; }
-        
-        
     }
 }

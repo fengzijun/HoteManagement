@@ -21,8 +21,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.RoleID);
           this.Property(t => t.Menu_id);
           this.Property(t => t.Menu_pid);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

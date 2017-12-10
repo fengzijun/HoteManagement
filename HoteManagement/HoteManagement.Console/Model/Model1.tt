@@ -20,11 +20,12 @@ WriteHeader(codeStringGenerator, fileManager);
 
 foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection))
 {
-    fileManager.StartNewFile(entity.Name + ".cs");
-    codeStringGenerator.UsingDirectives(inHeader: false);
+    fileManager.StartNewFile("../DomainModel/"+entity.Name + ".cs");
+	#>
+<#=codeStringGenerator.UsingDirectives(inHeader: false)#>
+<#
     BeginNamespace(code);
 #>
-
 
 <#=codeStringGenerator.EntityClassOpening(entity)#>
 {
@@ -43,7 +44,6 @@ foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)
         foreach (var edmProperty in propertiesWithDefaultValues)
         {
 #>
-        
         this.<#=code.Escape(edmProperty)#> = <#=typeMapper.CreateLiteral(edmProperty.DefaultValue)#>;
 <#
         }
@@ -122,7 +122,7 @@ foreach (var complex in typeMapper.GetItemsToGenerate<ComplexType>(itemCollectio
     BeginNamespace(code);
 #>
 <#=codeStringGenerator.UsingDirectives(inHeader: false, includeCollections: false)#>
-<#=Accessibility.ForType(complex)#> class <#=code.Escape(complex)#>
+<#=Accessibility.ForType(complex)#> partial class <#=code.Escape(complex)#>
 {
 <#
     var complexProperties = typeMapper.GetComplexProperties(complex);
@@ -236,7 +236,7 @@ public void WriteHeader(CodeStringGenerator codeStringGenerator, EntityFramework
 // <#=CodeGenerationTools.GetResourceString("Template_GeneratedCodeCommentLine3")#>
 // </auto-generated>
 //------------------------------------------------------------------------------
-<#=codeStringGenerator.UsingDirectives(inHeader: false)#>
+<#=codeStringGenerator.UsingDirectives(inHeader: true)#>
 <#+
     fileManager.EndBlock();
 }
@@ -286,11 +286,8 @@ public class CodeStringGenerator
 
     public string Property(EdmProperty edmProperty)
     {
-	  
-		
-	    string name =  _code.Escape(edmProperty);
-		if(name == "Id" || name == "createtime" || name == "updatetime")
-		     return string.Empty;
+		if(edmProperty.Name.ToLower() == "id")
+		    return string.Empty;
         return string.Format(
             CultureInfo.InvariantCulture,
             "{0} {1} {2} {{ {3}get; {4}set; }}",
@@ -323,7 +320,7 @@ public class CodeStringGenerator
     {
         return string.Format(
             CultureInfo.InvariantCulture,
-            "{0} {1}class {2}{3}",
+            "{0} {1}partial class {2}{3}",
             Accessibility.ForType(entity),
             _code.SpaceAfter(_code.AbstractOption(entity)),
             _code.Escape(entity),

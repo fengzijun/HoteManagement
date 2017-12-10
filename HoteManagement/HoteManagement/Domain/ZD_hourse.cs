@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class ZD_hourse : BaseEntity
+    public partial class ZD_hourse : BaseEntity
     {
         
         public Nullable<System.TimeSpan> latest { get; set; }
@@ -21,7 +21,5 @@ namespace HoteManagement.Domain
         public Nullable<int> tixing { get; set; }
         public Nullable<System.TimeSpan> beigin { get; set; }
         public Nullable<System.TimeSpan> endtime { get; set; }
-        
-        
     }
 }

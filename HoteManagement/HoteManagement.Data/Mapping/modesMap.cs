@@ -19,10 +19,8 @@ namespace HoteManagement.Data.Mapping
        {
           this.HasKey(t => t.Id);
           this.Property(t => t.moshi_name).HasMaxLength(50);
-          this.Property(t => t.Reanker).HasMaxLength(null);
+          this.Property(t => t.Reanker);
           this.Property(t => t.sort);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

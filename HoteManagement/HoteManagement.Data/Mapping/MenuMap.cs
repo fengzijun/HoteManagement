@@ -24,8 +24,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.imgurl).HasMaxLength(200);
           this.Property(t => t.sortId);
           this.Property(t => t.isable);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

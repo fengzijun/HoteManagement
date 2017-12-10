@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class SysParamter : BaseEntity
+    public partial class SysParamter : BaseEntity
     {
         
         public Nullable<int> CancellMin { get; set; }
@@ -36,7 +36,5 @@ namespace HoteManagement.Domain
         public Nullable<bool> isOcczf { get; set; }
         public Nullable<bool> isCy { get; set; }
         public string MarkSuo { get; set; }
-        
-        
     }
 }

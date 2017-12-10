@@ -27,8 +27,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Real_Scheme_Id);
           this.Property(t => t.Ok_num);
           this.Property(t => t.Room_typeid);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

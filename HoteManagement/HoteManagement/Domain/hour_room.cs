@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class hour_room : BaseEntity
+    public partial class hour_room : BaseEntity
     {
         
         public Nullable<int> hs_room_id { get; set; }
@@ -30,7 +30,5 @@ namespace HoteManagement.Domain
         public Nullable<int> hs_source_id { get; set; }
         public Nullable<System.TimeSpan> lostTime { get; set; }
         public Nullable<int> MtID { get; set; }
-        
-        
     }
 }

@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class Sincethehous : BaseEntity
+    public partial class Sincethehous : BaseEntity
     {
         
         public string hs_Numberno { get; set; }
@@ -27,7 +27,5 @@ namespace HoteManagement.Domain
         public string hs_people { get; set; }
         public string hs_Result { get; set; }
         public string hs_remaker { get; set; }
-        
-        
     }
 }

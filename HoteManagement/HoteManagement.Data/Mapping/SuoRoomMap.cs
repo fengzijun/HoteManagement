@@ -21,8 +21,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.SuoType).HasMaxLength(50);
           this.Property(t => t.RoomNumber).HasMaxLength(50);
           this.Property(t => t.SuoMa).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

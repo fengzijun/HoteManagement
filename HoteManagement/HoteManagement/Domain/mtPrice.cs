@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class mtPrice : BaseEntity
+    public partial class mtPrice : BaseEntity
     {
         
         public Nullable<int> MTID { get; set; }
@@ -23,7 +23,5 @@ namespace HoteManagement.Domain
         public Nullable<double> zdPrice { get; set; }
         public Nullable<int> lcPrice { get; set; }
         public string mothPrice { get; set; }
-        
-        
     }
 }

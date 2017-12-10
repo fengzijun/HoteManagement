@@ -13,10 +13,10 @@ namespace HoteManagement.Console.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CdHotelManageEntities1 : DbContext
+    public partial class testEntities : DbContext
     {
-        public CdHotelManageEntities1()
-            : base("name=CdHotelManageEntities1")
+        public testEntities()
+            : base("name=testEntities")
         {
         }
     
@@ -91,7 +91,6 @@ namespace HoteManagement.Console.Model
         public virtual DbSet<Sincethehous> Sincethehous { get; set; }
         public virtual DbSet<SuoRoom> SuoRoom { get; set; }
         public virtual DbSet<SuoSys> SuoSys { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<SysParamter> SysParamter { get; set; }
         public virtual DbSet<TypeScheme> TypeScheme { get; set; }
         public virtual DbSet<UserInfo> UserInfo { get; set; }

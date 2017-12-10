@@ -49,7 +49,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.amount_rece);
           this.Property(t => t.return_money);
           this.Property(t => t.sale_id);
-          this.Property(t => t.remark).HasMaxLength(null);
+          this.Property(t => t.remark);
           this.Property(t => t.sort).HasMaxLength(50);
           this.Property(t => t.lordRoomid).HasMaxLength(50);
           this.Property(t => t.continuelive);
@@ -57,8 +57,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.tuifaId);
           this.Property(t => t.userid).HasMaxLength(50);
           this.Property(t => t.header_img).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

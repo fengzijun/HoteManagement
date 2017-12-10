@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class Book_Rdetail : BaseEntity
+    public partial class Book_Rdetail : BaseEntity
     {
         
         public string Book_no { get; set; }
@@ -25,7 +25,7 @@ namespace HoteManagement.Domain
         public Nullable<int> Real_Scheme_Id { get; set; }
         public Nullable<int> Ok_num { get; set; }
         public Nullable<int> Room_typeid { get; set; }
-        
-        
+    
+        public virtual book_room book_room { get; set; }
     }
 }

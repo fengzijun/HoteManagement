@@ -35,8 +35,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Likes).HasMaxLength(100);
           this.Property(t => t.Remark).HasMaxLength(500);
           this.Property(t => t.Post);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

@@ -17,9 +17,9 @@ namespace HoteManagement.Data.Mapping
     {
        public comm_unitMap()
        {
-          this.Property(t => t.id);
+          this.HasKey(t => t.Id);
           this.Property(t => t.unit_name).HasMaxLength(50);
-          this.Property(t => t.remark).HasMaxLength(null);
+          this.Property(t => t.remark);
        }
     }
 }

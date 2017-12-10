@@ -23,8 +23,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.ZsJf);
           this.Property(t => t.IsOk);
           this.Property(t => t.Remark).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

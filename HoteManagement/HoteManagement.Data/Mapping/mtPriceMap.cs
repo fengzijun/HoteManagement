@@ -25,8 +25,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.zdPrice);
           this.Property(t => t.lcPrice);
           this.Property(t => t.mothPrice).HasMaxLength(10);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

@@ -26,10 +26,8 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Goods_spell).HasMaxLength(50);
           this.Property(t => t.Goods_ifType);
           this.Property(t => t.Goods_categories);
-          this.Property(t => t.Goods_Remaker).HasMaxLength(null);
+          this.Property(t => t.Goods_Remaker);
           this.Property(t => t.Goods_jf);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

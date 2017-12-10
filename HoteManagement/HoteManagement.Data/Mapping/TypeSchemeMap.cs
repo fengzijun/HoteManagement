@@ -23,8 +23,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.EarlyInsufficient);
           this.Property(t => t.EarlyInExceed);
           this.Property(t => t.EarlyInAddPri);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

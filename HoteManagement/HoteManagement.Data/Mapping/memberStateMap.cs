@@ -20,8 +20,6 @@ namespace HoteManagement.Data.Mapping
           this.HasKey(t => t.Id);
           this.Property(t => t.title).HasMaxLength(50);
           this.Property(t => t.Remark).HasMaxLength(100);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

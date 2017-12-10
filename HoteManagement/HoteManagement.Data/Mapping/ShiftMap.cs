@@ -21,9 +21,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.user_id);
           this.Property(t => t.goods_account_id);
           this.Property(t => t.shfit_name).HasMaxLength(50);
-          this.Property(t => t.remark).HasMaxLength(null);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
+          this.Property(t => t.remark);
        }
     }
 }

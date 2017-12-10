@@ -6,19 +6,17 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class customerType : BaseEntity
+    public partial class customerType : BaseEntity
     {
         
         public string ctName { get; set; }
         public string Reamrk { get; set; }
-        
-        
     }
 }

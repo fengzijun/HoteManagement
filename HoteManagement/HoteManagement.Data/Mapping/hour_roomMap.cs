@@ -32,8 +32,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.hs_source_id);
           this.Property(t => t.lostTime);
           this.Property(t => t.MtID);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

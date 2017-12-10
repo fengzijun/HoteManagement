@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class cprotocolPrice : BaseEntity
+    public partial class cprotocolPrice : BaseEntity
     {
         
         public string Accounts { get; set; }
@@ -26,7 +26,5 @@ namespace HoteManagement.Domain
         public Nullable<int> Breakfast { get; set; }
         public Nullable<int> commission { get; set; }
         public Nullable<int> cpID { get; set; }
-        
-        
     }
 }

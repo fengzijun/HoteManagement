@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class ExceedScheme : BaseEntity
+    public partial class ExceedScheme : BaseEntity
     {
         
         public int TypeRoom { get; set; }
@@ -23,7 +23,5 @@ namespace HoteManagement.Domain
         public Nullable<int> EarlyInsufficient { get; set; }
         public Nullable<int> EarlyInExceed { get; set; }
         public Nullable<decimal> EarlyInAddPri { get; set; }
-        
-        
     }
 }

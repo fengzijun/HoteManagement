@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class floor_manage : BaseEntity
+    public partial class floor_manage : BaseEntity
     {
         
         public string floor_number { get; set; }
@@ -21,7 +21,5 @@ namespace HoteManagement.Domain
         public string floor_sorting { get; set; }
         public string floor_remaker { get; set; }
         public string floor_shoping { get; set; }
-        
-        
     }
 }

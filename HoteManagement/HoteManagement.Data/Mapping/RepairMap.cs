@@ -22,9 +22,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.repair_time);
           this.Property(t => t.repair_man).HasMaxLength(50);
           this.Property(t => t.repair_num);
-          this.Property(t => t.repair_remark).HasMaxLength(null);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
+          this.Property(t => t.repair_remark);
        }
     }
 }

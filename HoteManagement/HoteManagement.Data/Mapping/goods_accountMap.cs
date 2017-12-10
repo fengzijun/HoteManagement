@@ -29,7 +29,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.ga_people).HasMaxLength(50);
           this.Property(t => t.ga_Type);
           this.Property(t => t.ga_sum_price);
-          this.Property(t => t.ga_remker).HasMaxLength(null);
+          this.Property(t => t.ga_remker);
           this.Property(t => t.ga_occuid).HasMaxLength(50);
           this.Property(t => t.ga_sfacount).HasMaxLength(50);
           this.Property(t => t.ga_isjz);
@@ -37,8 +37,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.ga_isys);
           this.Property(t => t.ga_Account).HasMaxLength(50);
           this.Property(t => t.ga_jsfs);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

@@ -30,8 +30,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Activity);
           this.Property(t => t.UserType).HasMaxLength(2);
           this.Property(t => t.Style);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

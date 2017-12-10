@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class real_state : BaseEntity
+    public partial class real_state : BaseEntity
     {
         
         public string tr_number { get; set; }
@@ -21,7 +21,5 @@ namespace HoteManagement.Domain
         public string tr_remaker { get; set; }
         public string back1 { get; set; }
         public string back2 { get; set; }
-        
-        
     }
 }

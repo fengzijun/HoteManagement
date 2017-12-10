@@ -25,12 +25,10 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.room_zmmoney);
           this.Property(t => t.room_hourmation).HasMaxLength(200);
           this.Property(t => t.room_reamker).HasMaxLength(200);
-          this.Property(t => t.room_image).HasMaxLength(null);
+          this.Property(t => t.room_image);
           this.Property(t => t.room_ealry_price);
           this.Property(t => t.room_Moth_price);
           this.Property(t => t.room_Bfb);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

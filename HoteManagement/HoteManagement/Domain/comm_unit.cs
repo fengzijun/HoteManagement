@@ -6,16 +6,16 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class comm_unit : BaseEntity
+    public partial class comm_unit : BaseEntity
     {
-        public int id { get; set; }
+        
         public string unit_name { get; set; }
         public string remark { get; set; }
     }

@@ -39,8 +39,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.AddDate);
           this.Property(t => t.addUser).HasMaxLength(50);
           this.Property(t => t.XqTime);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

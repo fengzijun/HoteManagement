@@ -25,13 +25,11 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Shop_Province).HasMaxLength(50);
           this.Property(t => t.Shop_City).HasMaxLength(50);
           this.Property(t => t.Shop_Area).HasMaxLength(50);
-          this.Property(t => t.Shop_Address).HasMaxLength(null);
+          this.Property(t => t.Shop_Address);
           this.Property(t => t.Shop_x).HasMaxLength(50);
           this.Property(t => t.Shop_y).HasMaxLength(50);
-          this.Property(t => t.Shop_Remaker).HasMaxLength(null);
+          this.Property(t => t.Shop_Remaker);
           this.Property(t => t.Shop_date);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

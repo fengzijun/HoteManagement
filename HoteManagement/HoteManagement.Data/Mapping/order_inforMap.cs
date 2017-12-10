@@ -25,7 +25,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.return_money);
           this.Property(t => t.order_state).HasMaxLength(50);
           this.Property(t => t.order_time);
-          this.Property(t => t.remark).HasMaxLength(null);
+          this.Property(t => t.remark);
        }
     }
 }

@@ -20,7 +20,7 @@ WriteHeader(codeStringGenerator, fileManager);
 
 foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection))
 {
-    fileManager.StartNewFile(entity.Name + "Map.cs");
+    fileManager.StartNewFile("../Mapping/"+entity.Name + "Map.cs");
     codeStringGenerator.UsingDirectives(inHeader: false);
     BeginNamespace(code);
 #>

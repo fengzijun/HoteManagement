@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class AddPrice : BaseEntity
+    public partial class AddPrice : BaseEntity
     {
         
         public Nullable<int> AddPice { get; set; }
@@ -21,7 +21,5 @@ namespace HoteManagement.Domain
         public Nullable<int> ZsJf { get; set; }
         public Nullable<bool> IsOk { get; set; }
         public string Remark { get; set; }
-        
-        
     }
 }

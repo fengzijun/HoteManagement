@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class Menu : BaseEntity
+    public partial class Menu : BaseEntity
     {
         
         public string title { get; set; }
@@ -22,7 +22,5 @@ namespace HoteManagement.Domain
         public string imgurl { get; set; }
         public Nullable<int> sortId { get; set; }
         public Nullable<bool> isable { get; set; }
-        
-        
     }
 }

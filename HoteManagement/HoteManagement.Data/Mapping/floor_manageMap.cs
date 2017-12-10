@@ -21,10 +21,8 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.floor_number).HasMaxLength(50);
           this.Property(t => t.floor_name).HasMaxLength(50);
           this.Property(t => t.floor_sorting).HasMaxLength(50);
-          this.Property(t => t.floor_remaker).HasMaxLength(null);
+          this.Property(t => t.floor_remaker);
           this.Property(t => t.floor_shoping).HasMaxLength(50);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }

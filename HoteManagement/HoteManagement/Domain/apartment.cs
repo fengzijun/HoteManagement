@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
     
-    
-    public class apartment : BaseEntity
+    public partial class apartment : BaseEntity
     {
         
         public string occ_no { get; set; }
@@ -55,7 +55,5 @@ namespace HoteManagement.Domain
         public Nullable<int> tuifaId { get; set; }
         public string userid { get; set; }
         public string header_img { get; set; }
-        
-        
     }
 }

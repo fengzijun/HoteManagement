@@ -28,8 +28,6 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Breakfast);
           this.Property(t => t.commission);
           this.Property(t => t.cpID);
-          this.Property(t => t.createtime);
-          this.Property(t => t.updatetime);
        }
     }
 }
