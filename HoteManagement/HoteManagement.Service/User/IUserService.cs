@@ -20,6 +20,6 @@ namespace HoteManagement.Service.User
 
         Accounts_UsersDto GetAccountUser(string username, string pwd);
 
-
+        void UpdateAccountUser(Accounts_UsersDto user);
     }
 }

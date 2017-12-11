@@ -13,6 +13,9 @@ namespace HoteManagement.Web.Controllers
 {
     public class AdminController : BaseController
     {
+
+
+
         [HotelAuthorize]
         public ActionResult Index()
         {
@@ -44,6 +47,10 @@ namespace HoteManagement.Web.Controllers
             var user = userService.GetAccountUser(model.UserName, model.Password);
             if(user!=null)
             {
+
+                user.Email = DateTime.Now.ToString();
+                user.Phone = webHelper.GetCurrentIpAddress();
+                userService.UpdateAccountUser(user);
 
                 FormsAuthenticationTicket authTicket =
                     new FormsAuthenticationTicket(

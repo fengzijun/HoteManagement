@@ -21,6 +21,7 @@ namespace HoteManagement.Web.Core
         protected readonly ISysService sysService;
         protected readonly IUserService userService;
         protected readonly ILogger logger;
+        protected readonly IWebHelper webHelper;
 
         public BaseController()
         {
@@ -29,6 +30,7 @@ namespace HoteManagement.Web.Core
             sysService = EngineContext.Current.Resolve<ISysService>();
             userService = EngineContext.Current.Resolve<IUserService>();
             logger = EngineContext.Current.Resolve<ILogger>();
+            webHelper = EngineContext.Current.Resolve<IWebHelper>();
         }
 
 

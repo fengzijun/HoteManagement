@@ -181,6 +181,12 @@ namespace HoteManagement.Service.User
             return _accounts_usersRepository.TableNoTracking.Where(s => s.UserName == username && s.Password == pwd).FirstOrDefault() != null;
         }
 
+        public virtual void UpdateAccountUser(Accounts_UsersDto user)
+        {
+            Domain.Accounts_Users accounts_Users = AutoMapper.Mapper.Map<Domain.Accounts_Users>(user);
+            _accounts_usersRepository.Update(accounts_Users);
+        }
+
         public virtual Accounts_UsersDto GetAccountUser(string username,string pwd)
         {
             return _accounts_usersRepository.TableNoTracking.Where(s => s.UserName == username && s.Password == pwd).ProjectToFirstOrDefault<Accounts_UsersDto>();
