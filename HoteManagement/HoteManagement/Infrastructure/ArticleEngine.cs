@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
-using Autofac.Integration.WebApi;
 using HoteManagement.Configuration;
 using HoteManagement.Infrastructure.DependencyManagement;
 using HoteManagement.Infrastructure.UnitOfWork;
@@ -80,13 +79,13 @@ namespace HoteManagement.Infrastructure
             builder.Update(container);
 
             //set dependency resolver
-            if (config.SystemSetting.IsWebApi)
-            {
-                var httpconfig = GlobalConfiguration.Configuration;
-                httpconfig.DependencyResolver = new AutofacWebApiDependencyResolver(container);
-            }
-            else
-                DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            //if (config.SystemSetting.IsWebApi)
+            //{
+            //    var httpconfig = GlobalConfiguration.Configuration;
+            //    httpconfig.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+            //}
+            //else
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
 
         #endregion Utilities

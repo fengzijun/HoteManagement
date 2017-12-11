@@ -46,13 +46,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.DynamicProxy, Version=4.2.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Extras.DynamicProxy.4.2.1\lib\net45\Autofac.Extras.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.0.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -113,9 +134,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -190,24 +208,363 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Core\BaseController.cs" />
+    <Compile Include="Core\DependencyRegistrar.cs" />
+    <Compile Include="Core\DependencyRegistrarExtensions.cs" />
+    <Compile Include="Core\ExceptionHandlingAttribute.cs" />
+    <Compile Include="Core\HotelAuthorize.cs" />
+    <Compile Include="Core\NewJsonResult.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AjaxResponse.cs" />
+    <Compile Include="Models\AjaxResponseOfTResult.cs" />
+    <Compile Include="Models\ErrorInfo.cs" />
+    <Compile Include="Models\ErrorViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IErrorInfoBuilder.cs" />
+    <Compile Include="Models\IExceptionToErrorInfoConverter.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ModelStateExtensions.cs" />
+    <Compile Include="Models\MvcAjaxResponse.cs" />
+    <Compile Include="Models\MvcAjaxResponseOfTResult.cs" />
+    <Compile Include="Models\ValidationErrorInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css.css" />
+    <Content Include="Content\cssbf.css" />
+    <Content Include="Content\hDate.css" />
+    <Content Include="Content\Images\010.gif" />
+    <Content Include="Content\Images\037.gif" />
+    <Content Include="Content\Images\1.png" />
+    <Content Include="Content\Images\10.png" />
+    <Content Include="Content\Images\11.png" />
+    <Content Include="Content\Images\12.png" />
+    <Content Include="Content\Images\13.png" />
+    <Content Include="Content\Images\14.png" />
+    <Content Include="Content\Images\15.png" />
+    <Content Include="Content\Images\16.png" />
+    <Content Include="Content\Images\17.png" />
+    <Content Include="Content\Images\18.png" />
+    <Content Include="Content\Images\19.png" />
+    <Content Include="Content\Images\2.png" />
+    <Content Include="Content\Images\20.png" />
+    <Content Include="Content\Images\20150506043824760_easyicon_net_21.6720554273.png" />
+    <Content Include="Content\Images\3.png" />
+    <Content Include="Content\Images\4.png" />
+    <Content Include="Content\Images\5.png" />
+    <Content Include="Content\Images\6.png" />
+    <Content Include="Content\Images\7.png" />
+    <Content Include="Content\Images\8.png" />
+    <Content Include="Content\Images\9.png" />
+    <Content Include="Content\Images\about16.gif" />
+    <Content Include="Content\Images\add16.gif" />
+    <Content Include="Content\Images\add_price_type.jpg" />
+    <Content Include="Content\Images\add_price_type_no.jpg" />
+    <Content Include="Content\Images\app_butn.jpg" />
+    <Content Include="Content\Images\app_erweima.jpg" />
+    <Content Include="Content\Images\a_te01.gif" />
+    <Content Include="Content\Images\a_te02.gif" />
+    <Content Include="Content\Images\b1.gif" />
+    <Content Include="Content\Images\b11-1.gif" />
+    <Content Include="Content\Images\b11-2.gif" />
+    <Content Include="Content\Images\b11.gif" />
+    <Content Include="Content\Images\b12.gif" />
+    <Content Include="Content\Images\b13-1.gif" />
+    <Content Include="Content\Images\b13-2.gif" />
+    <Content Include="Content\Images\b13.gif" />
+    <Content Include="Content\Images\b3.gif" />
+    <Content Include="Content\Images\b4.gif" />
+    <Content Include="Content\Images\b5.gif" />
+    <Content Include="Content\Images\bar_00.gif" />
+    <Content Include="Content\Images\bar_01.gif" />
+    <Content Include="Content\Images\bar_02.gif" />
+    <Content Include="Content\Images\bar_03.gif" />
+    <Content Include="Content\Images\bar_04.gif" />
+    <Content Include="Content\Images\bar_05.gif" />
+    <Content Include="Content\Images\bar_06.gif" />
+    <Content Include="Content\Images\bar_07.gif" />
+    <Content Include="Content\Images\bar_08.gif" />
+    <Content Include="Content\Images\bar_10.gif" />
+    <Content Include="Content\Images\bbsMoHead.png" />
+    <Content Include="Content\Images\bg.gif" />
+    <Content Include="Content\Images\bg01.png" />
+    <Content Include="Content\Images\bgcircle.png" />
+    <Content Include="Content\Images\bgx.GIF" />
+    <Content Include="Content\Images\bg_01.gif" />
+    <Content Include="Content\Images\bg_02.gif" />
+    <Content Include="Content\Images\bg_03.gif" />
+    <Content Include="Content\Images\bj_icon.png" />
+    <Content Include="Content\Images\blank.gif" />
+    <Content Include="Content\Images\bottom_01.gif" />
+    <Content Include="Content\Images\bottom_02.gif" />
+    <Content Include="Content\Images\bottom_03.gif" />
+    <Content Include="Content\Images\Briefcase16.gif" />
+    <Content Include="Content\Images\Briefcase32.gif" />
+    <Content Include="Content\Images\btnout_bg_center.gif" />
+    <Content Include="Content\Images\btnout_bg_left.gif" />
+    <Content Include="Content\Images\btnout_bg_right.gif" />
+    <Content Include="Content\Images\btnover_bg_center.gif" />
+    <Content Include="Content\Images\btnover_bg_left.gif" />
+    <Content Include="Content\Images\btnover_bg_right.gif" />
+    <Content Include="Content\Images\button.jpg" />
+    <Content Include="Content\Images\button01.png" />
+    <Content Include="Content\Images\button_edit.gif" />
+    <Content Include="Content\Images\button_hover.jpg" />
+    <Content Include="Content\Images\button_search.GIF" />
+    <Content Include="Content\Images\c6.gif" />
+    <Content Include="Content\Images\card16.gif" />
+    <Content Include="Content\Images\card32.gif" />
+    <Content Include="Content\Images\clear.jpg" />
+    <Content Include="Content\Images\close.png" />
+    <Content Include="Content\Images\closeBG.png" />
+    <Content Include="Content\Images\close_1.png" />
+    <Content Include="Content\Images\company16.gif" />
+    <Content Include="Content\Images\credit.jpg" />
+    <Content Include="Content\Images\cs1.png" />
+    <Content Include="Content\Images\css.css" />
+    <Content Include="Content\Images\d2.gif" />
+    <Content Include="Content\Images\d3.gif" />
+    <Content Include="Content\Images\desktop16.gif" />
+    <Content Include="Content\Images\desktop32.gif" />
+    <Content Include="Content\Images\desktop_01.gif" />
+    <Content Include="Content\Images\desktop_02.gif" />
+    <Content Include="Content\Images\desktop_03.gif" />
+    <Content Include="Content\Images\download.png" />
+    <Content Include="Content\Images\dsj16.gif" />
+    <Content Include="Content\Images\dsj32.gif" />
+    <Content Include="Content\Images\edit.png" />
+    <Content Include="Content\Images\edit_1.png" />
+    <Content Include="Content\Images\excel.gif" />
+    <Content Include="Content\Images\f3.gif" />
+    <Content Include="Content\Images\f4.gif" />
+    <Content Include="Content\Images\find16.gif" />
+    <Content Include="Content\Images\find32.gif" />
+    <Content Include="Content\Images\folder16.gif" />
+    <Content Include="Content\Images\folder32.gif" />
+    <Content Include="Content\Images\foldergreen_16.gif" />
+    <Content Include="Content\Images\ftt_actives.png" />
+    <Content Include="Content\Images\ftt_actives_big.png" />
+    <Content Include="Content\Images\ftt_actives_small.png" />
+    <Content Include="Content\Images\ger16.gif" />
+    <Content Include="Content\Images\ger32.gif" />
+    <Content Include="Content\Images\gongg16.gif" />
+    <Content Include="Content\Images\gongg32.gif" />
+    <Content Include="Content\Images\gongzkp16.gif" />
+    <Content Include="Content\Images\gongzkp32.gif" />
+    <Content Include="Content\Images\HeaderImg\2021 134511.jpg" />
+    <Content Include="Content\Images\HeaderImg\2021 134541.jpg" />
+    <Content Include="Content\Images\HeaderImg\2021 134720.jpg" />
+    <Content Include="Content\Images\HeaderImg\2021 134941.jpg" />
+    <Content Include="Content\Images\HeaderImg\2021 135733.jpg" />
+    <Content Include="Content\Images\HeaderImg\2021 144631.jpg" />
+    <Content Include="Content\Images\HeaderImg\2021 14923.jpg" />
+    <Content Include="Content\Images\help16.gif" />
+    <Content Include="Content\Images\help32.gif" />
+    <Content Include="Content\Images\hyy01.png" />
+    <Content Include="Content\Images\hyy02.png" />
+    <Content Include="Content\Images\hyy04.png" />
+    <Content Include="Content\Images\hyybtn.gif" />
+    <Content Include="Content\Images\ico-chrome.png" />
+    <Content Include="Content\Images\ico-ie8.jpg" />
+    <Content Include="Content\Images\icon.gif" />
+    <Content Include="Content\Images\iconbg_a143619.png" />
+    <Content Include="Content\Images\iconbj.png" />
+    <Content Include="Content\Images\iconcuizhang.png" />
+    <Content Include="Content\Images\iconfree.png" />
+    <Content Include="Content\Images\iconjiangzou.png" />
+    <Content Include="Content\Images\iconqf.png" />
+    <Content Include="Content\Images\iconrili.png" />
+    <Content Include="Content\Images\iconsc.png" />
+    <Content Include="Content\Images\iconsuofang.png" />
+    <Content Include="Content\Images\iconxz.png" />
+    <Content Include="Content\Images\image.gif" />
+    <Content Include="Content\Images\infor_close.jpg" />
+    <Content Include="Content\Images\interface_logo.jpg" />
+    <Content Include="Content\Images\interface_logo_hover.jpg" />
+    <Content Include="Content\Images\in_bg.gif" />
+    <Content Include="Content\Images\left-1-1.gif" />
+    <Content Include="Content\Images\left-1-2.gif" />
+    <Content Include="Content\Images\left-1-3.gif" />
+    <Content Include="Content\Images\left-1.gif" />
+    <Content Include="Content\Images\left-2-1.gif" />
+    <Content Include="Content\Images\left-2-2.gif" />
+    <Content Include="Content\Images\left-2-3.gif" />
+    <Content Include="Content\Images\left-2.gif" />
+    <Content Include="Content\Images\left-3-1.gif" />
+    <Content Include="Content\Images\left-3-2.gif" />
+    <Content Include="Content\Images\left-3-3.gif" />
+    <Content Include="Content\Images\left-3.gif" />
+    <Content Include="Content\Images\left-bj-1.gif" />
+    <Content Include="Content\Images\left-bj-2.gif" />
+    <Content Include="Content\Images\left-bj-3.gif" />
+    <Content Include="Content\Images\left-bj.gif" />
+    <Content Include="Content\Images\Loading.gif" />
+    <Content Include="Content\Images\login.css" />
+    <Content Include="Content\Images\loginbg.png" />
+    <Content Include="Content\Images\loginbg2.png" />
+    <Content Include="Content\Images\loginbg3.png" />
+    <Content Include="Content\Images\loginText.png" />
+    <Content Include="Content\Images\login_bg.png" />
+    <Content Include="Content\Images\login_p_img02.gif" />
+    <Content Include="Content\Images\login_p_img03.gif" />
+    <Content Include="Content\Images\login_p_img04.gif" />
+    <Content Include="Content\Images\login_p_img05.gif" />
+    <Content Include="Content\Images\login_p_img11.gif" />
+    <Content Include="Content\Images\logo.jpg" />
+    <Content Include="Content\Images\LOGO.png" />
+    <Content Include="Content\Images\mag16.gif" />
+    <Content Include="Content\Images\mail16.gif" />
+    <Content Include="Content\Images\main_01.gif" />
+    <Content Include="Content\Images\main_04.gif" />
+    <Content Include="Content\Images\main_05.gif" />
+    <Content Include="Content\Images\main_06.gif" />
+    <Content Include="Content\Images\main_08.gif" />
+    <Content Include="Content\Images\main_09.gif" />
+    <Content Include="Content\Images\main_bg.jpg" />
+    <Content Include="Content\Images\main_logo.jpg" />
+    <Content Include="Content\Images\member_t04.JPG" />
+    <Content Include="Content\Images\menu01.png" />
+    <Content Include="Content\Images\menu02.png" />
+    <Content Include="Content\Images\menu03.png" />
+    <Content Include="Content\Images\menu04.png" />
+    <Content Include="Content\Images\menu05.png" />
+    <Content Include="Content\Images\menu06.png" />
+    <Content Include="Content\Images\MenuImg\288.GIF" />
+    <Content Include="Content\Images\MenuImg\about16.gif" />
+    <Content Include="Content\Images\MenuImg\bbs16.gif" />
+    <Content Include="Content\Images\MenuImg\find16.gif" />
+    <Content Include="Content\Images\MenuImg\folder16.gif" />
+    <Content Include="Content\Images\MenuImg\foldergreen_16.gif" />
+    <Content Include="Content\Images\MenuImg\ger16.gif" />
+    <Content Include="Content\Images\MenuImg\help16.gif" />
+    <Content Include="Content\Images\MenuImg\news16.gif" />
+    <Content Include="Content\Images\MenuImg\out16.gif" />
+    <Content Include="Content\Images\MenuImg\Programs16.gif" />
+    <Content Include="Content\Images\MenuImg\quanx16.gif" />
+    <Content Include="Content\Images\MenuImg\thumbnails.gif" />
+    <Content Include="Content\Images\MenuImg\times.gif" />
+    <Content Include="Content\Images\MenuImg\ts16.gif" />
+    <Content Include="Content\Images\MenuImg\user16.gif" />
+    <Content Include="Content\Images\MenuImg\xinx16.gif" />
+    <Content Include="Content\Images\MenuImg\zhut16.gif" />
+    <Content Include="Content\Images\MenuImg\zjsp16.gif" />
+    <Content Include="Content\Images\menu_bg.jpg" />
+    <Content Include="Content\Images\menu_close.png" />
+    <Content Include="Content\Images\menu_line.jpg" />
+    <Content Include="Content\Images\message16.gif" />
+    <Content Include="Content\Images\module16.gif" />
+    <Content Include="Content\Images\module32.gif" />
+    <Content Include="Content\Images\more1.gif" />
+    <Content Include="Content\Images\myfile16.gif" />
+    <Content Include="Content\Images\myfile32.gif" />
+    <Content Include="Content\Images\news16.gif" />
+    <Content Include="Content\Images\no.gif" />
+    <Content Include="Content\Images\onecard16.gif" />
+    <Content Include="Content\Images\onecard32.gif" />
+    <Content Include="Content\Images\out16.gif" />
+    <Content Include="Content\Images\out32.gif" />
+    <Content Include="Content\Images\pdf.gif" />
+    <Content Include="Content\Images\plan16.gif" />
+    <Content Include="Content\Images\plan32.gif" />
+    <Content Include="Content\Images\point07.gif" />
+    <Content Include="Content\Images\print.gif" />
+    <Content Include="Content\Images\prompt.png" />
+    <Content Include="Content\Images\prop.gif" />
+    <Content Include="Content\Images\pw.png" />
+    <Content Include="Content\Images\quanx16.gif" />
+    <Content Include="Content\Images\quanx32.gif" />
+    <Content Include="Content\Images\qx_icon.png" />
+    <Content Include="Content\Images\reg_bg.gif" />
+    <Content Include="Content\Images\right-bj-1.gif" />
+    <Content Include="Content\Images\right-bj-2.gif" />
+    <Content Include="Content\Images\right-bj-3.gif" />
+    <Content Include="Content\Images\right-bj.gif" />
+    <Content Include="Content\Images\save.png" />
+    <Content Include="Content\Images\scicon.png" />
+    <Content Include="Content\Images\search.jpg" />
+    <Content Include="Content\Images\search.png" />
+    <Content Include="Content\Images\search_top.jpg" />
+    <Content Include="Content\Images\sicon01.png" />
+    <Content Include="Content\Images\sicon02.png" />
+    <Content Include="Content\Images\sicon03.png" />
+    <Content Include="Content\Images\sicon04.png" />
+    <Content Include="Content\Images\sicon05.png" />
+    <Content Include="Content\Images\sicon06.png" />
+    <Content Include="Content\Images\sicon07.png" />
+    <Content Include="Content\Images\spacer.gif" />
+    <Content Include="Content\Images\step_1.png" />
+    <Content Include="Content\Images\step_2.png" />
+    <Content Include="Content\Images\step_3.png" />
+    <Content Include="Content\Images\step_4.png" />
+    <Content Include="Content\Images\style.css" />
+    <Content Include="Content\Images\themes.gif" />
+    <Content Include="Content\Images\tk_close.png" />
+    <Content Include="Content\Images\top-1-1.gif" />
+    <Content Include="Content\Images\top-1-2.gif" />
+    <Content Include="Content\Images\top-1-3.gif" />
+    <Content Include="Content\Images\top-1.gif" />
+    <Content Include="Content\Images\top-2-1.gif" />
+    <Content Include="Content\Images\top-2-2.gif" />
+    <Content Include="Content\Images\top-2-3.gif" />
+    <Content Include="Content\Images\top-2.gif" />
+    <Content Include="Content\Images\top-3-1.gif" />
+    <Content Include="Content\Images\top-3-2.gif" />
+    <Content Include="Content\Images\top-3-3.gif" />
+    <Content Include="Content\Images\top-3.gif" />
+    <Content Include="Content\Images\top-4-1.gif" />
+    <Content Include="Content\Images\top-4-2.gif" />
+    <Content Include="Content\Images\top-4-3.gif" />
+    <Content Include="Content\Images\top-4.gif" />
+    <Content Include="Content\Images\top-5-1.gif" />
+    <Content Include="Content\Images\top-5-2.gif" />
+    <Content Include="Content\Images\top-5-3.gif" />
+    <Content Include="Content\Images\top-5.gif" />
+    <Content Include="Content\Images\top-bj-1.gif" />
+    <Content Include="Content\Images\top-bj-2.gif" />
+    <Content Include="Content\Images\top-bj-3.gif" />
+    <Content Include="Content\Images\top-bj.gif" />
+    <Content Include="Content\Images\topbar_01.jpg" />
+    <Content Include="Content\Images\topbar_02.jpg" />
+    <Content Include="Content\Images\topbar_03.jpg" />
+    <Content Include="Content\Images\topbg2.png" />
+    <Content Include="Content\Images\top_icon.png" />
+    <Content Include="Content\Images\top_icon_hover.png" />
+    <Content Include="Content\Images\top_icon_select.png" />
+    <Content Include="Content\Images\tubiao_01.GIF" />
+    <Content Include="Content\Images\tubiao_02.gif" />
+    <Content Include="Content\Images\type_icon.jpg" />
+    <Content Include="Content\Images\type_icon.png" />
+    <Content Include="Content\Images\user16.gif" />
+    <Content Include="Content\Images\vote16.gif" />
+    <Content Include="Content\Images\x16.gif" />
+    <Content Include="Content\Images\xinx16.gif" />
+    <Content Include="Content\Images\xinx32.gif" />
+    <Content Include="Content\Images\xz.jpg" />
+    <Content Include="Content\Images\yes.gif" />
+    <Content Include="Content\Images\yw16.gif" />
+    <Content Include="Content\Images\zhut16.gif" />
+    <Content Include="Content\Images\zjsp16.gif" />
+    <Content Include="Content\newhouseview.css" />
+    <Content Include="Content\Opendiv.css" />
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\Sheet.css" />
+    <Content Include="Content\shezhi.css" />
+    <Content Include="Content\toom.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="log4net.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -258,9 +615,15 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Error\NotAccess.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -274,6 +637,20 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HoteManagement.Data\HoteManagement.Data.csproj">
+      <Project>{8061e779-4664-43b2-9bc2-4ec00a9b6316}</Project>
+      <Name>HoteManagement.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HoteManagement.Service\HoteManagement.Service.csproj">
+      <Project>{2dfd7b06-5608-4d79-8eb8-cca12e74586f}</Project>
+      <Name>HoteManagement.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HoteManagement\HoteManagement.csproj">
+      <Project>{07f589af-79a5-4116-bdef-ad2dead3d899}</Project>
+      <Name>HoteManagement</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

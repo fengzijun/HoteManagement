@@ -49,14 +49,19 @@ namespace HoteManagement.Web.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "电子邮件")]
-        [EmailAddress]
+        [Display(Name = "用户名")]
+        public string UserName { get; set; }
+
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "密码")]
         public string Password { get; set; }
+
+        [Required]
+        [Display(Name = "验证码")]
+        public string Code { get; set; }
 
         [Display(Name = "记住我?")]
         public bool RememberMe { get; set; }
