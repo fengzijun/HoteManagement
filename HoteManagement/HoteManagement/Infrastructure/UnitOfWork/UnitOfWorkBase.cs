@@ -90,6 +90,7 @@ namespace HoteManagement.Infrastructure.UnitOfWork
                 return;
             }
 
+            IsBeginCalledBefore = false;
             IsDisposed = true;
 
             if (!Success)

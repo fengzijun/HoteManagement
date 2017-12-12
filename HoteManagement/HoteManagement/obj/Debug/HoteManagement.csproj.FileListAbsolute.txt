@@ -42,3 +42,4 @@ D:\HoteManagement\HoteManagement\HoteManagement\bin\Debug\zh-Hans\System.Web.Htt
 D:\HoteManagement\HoteManagement\HoteManagement\bin\Debug\zh-Hans\System.Web.Http.WebHost.resources.dll
 D:\HoteManagement\HoteManagement\HoteManagement\obj\Debug\HoteManagement.dll
 D:\HoteManagement\HoteManagement\HoteManagement\obj\Debug\HoteManagement.pdb
+D:\HoteManagement\HoteManagement\HoteManagement\obj\Debug\HoteManagement.csprojResolveAssemblyReference.cache

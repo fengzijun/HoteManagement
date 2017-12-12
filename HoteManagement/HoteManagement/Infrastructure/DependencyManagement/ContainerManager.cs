@@ -196,9 +196,9 @@ namespace HoteManagement.Infrastructure.DependencyManagement
         {
             try
             {
-                if (HttpContext.Current != null)
-                    return AutofacDependencyResolver.Current.RequestLifetimeScope;
-
+                //if (HttpContext.Current != null)
+                //    return AutofacDependencyResolver.Current.RequestLifetimeScope;
+    
                 //when such lifetime scope is returned, you should be sure that it'll be disposed once used (e.g. in schedule tasks)
                 return Container.BeginLifetimeScope(MatchingScopeLifetimeTags.RequestLifetimeScopeTag);
             }
