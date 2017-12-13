@@ -144,7 +144,7 @@ namespace HoteManagement.Caching
         }
 
 
-        public T Get<T>(string key, Func<string, T> func, DateTimeOffset cachetime)
+        public T Get<T>(string key, Func<T> func, int cachetime)
         {
             throw new NotImplementedException();
         }

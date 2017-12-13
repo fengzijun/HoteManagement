@@ -213,6 +213,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Core\BaseController.cs" />
+    <Compile Include="Core\BaseWebViewPage.cs" />
     <Compile Include="Core\Const.cs" />
     <Compile Include="Core\DependencyRegistrar.cs" />
     <Compile Include="Core\DependencyRegistrarExtensions.cs" />

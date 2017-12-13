@@ -48,9 +48,18 @@ namespace HoteManagement.Caching
             Cache.Add(new CacheItem(key, data), policy);
         }
 
-        public virtual T Get<T>(string key,Func<string,T> func, DateTimeOffset cacheTime)
+        public virtual T Get<T>(string key,Func<T> func, int cacheTime)
         {
-            return Cache.AddOrGetExisting<T>(key, func, cacheTime);
+            var obj = Get<T>(key);
+            if (obj != null)
+                return obj;
+
+            var result = func();
+            if(result!=null)
+            {
+                Set(key, result, cacheTime);
+            }
+            return result;
         }
 
         /// <summary>

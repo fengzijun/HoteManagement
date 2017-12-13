@@ -148,15 +148,14 @@ namespace HoteManagement.Web.Core
         {
             if (UserInfo == null)
                 return;
-            var menus = cacheManager.Get<UserMenus>(Const.MENUKEY, (item) =>
+            var menus = cacheManager.Get<UserMenus>(Const.MENUKEY, () =>
             {
                 return userService.GetAccountMenus(UserInfo.Id);
-            }, DateTimeOffset.Now.AddHours(1));
+            }, 30);
 
-            if(menus!=null)
-            {
-                TempData[Const.MENUKEY] = menus;
-            }
+
+            var temp = cacheManager.Get<HoteManagement.Service.Model.UserMenus>(HoteManagement.Web.Core.Const.MENUKEY);
+
         }
     }
 }

@@ -48,6 +48,6 @@ namespace HoteManagement.Caching
         void Clear();
 
 
-        T Get<T>(string key, Func<string, T> func, DateTimeOffset cachetime);
+        T Get<T>(string key, Func<T> func, int cachetime);
     }
 }

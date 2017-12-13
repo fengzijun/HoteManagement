@@ -137,6 +137,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelDto.cs</LastGenOutput>
     </Content>
+    <Content Include="sql %282%29.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -146,10 +147,6 @@
     <Folder Include="DomainModel\" />
     <Folder Include="Mapping\" />
     <Folder Include="ModelDto\" />
-    <Folder Include="Model\..\ApplicationService\" />
-    <Folder Include="Model\..\DomainModel\" />
-    <Folder Include="Model\..\Mapping\" />
-    <Folder Include="Model\..\ModelDto\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

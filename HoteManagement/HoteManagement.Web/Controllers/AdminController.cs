@@ -14,7 +14,10 @@ namespace HoteManagement.Web.Controllers
     public class AdminController : BaseController
     {
 
+        public AdminController()
+        {
 
+        }
 
         [HotelAuthorize]
         public ActionResult Index()
