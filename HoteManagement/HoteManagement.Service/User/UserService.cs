@@ -202,5 +202,36 @@ namespace HoteManagement.Service.User
             return _accounts_usersRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_UsersDto>();
         }
 
+        public virtual UserMenus GetAccountMenus(int userid)
+        {
+            var accoutrole = _accounts_rolesRepository.TableNoTracking.Where(s => s.Id == userid).FirstOrDefault();
+            var rolemenus = _rolemenuRepository.TableNoTracking.Where(s => s.RoleID == accoutrole.RoleID).ToList();
+
+            var parnetids = rolemenus.Select(s => s.Menu_pid).Distinct().ToArray();
+
+            var parentmenus = _menuRepository.TableNoTracking.Where(s => parnetids.Contains(s.Id)).ProjectToList<MenuDto>();
+
+            UserMenus userMenus = new UserMenus { RoleId = accoutrole.RoleID, UserId = userid };
+            List<Menu> menus = new List<Menu>();
+         
+            foreach (var item in parentmenus)
+            {
+                var menu = new Menu { ParentMenu = item };
+                var childrenmenus = _rolemenuRepository.TableNoTracking.Where(s => s.RoleID == accoutrole.RoleID && s.Menu_pid == item.Id).ToList();
+                foreach(var chlilditem in childrenmenus)
+                {
+                    var clildmenu = _menuRepository.TableNoTracking.Where(s => s.Id == chlilditem.Menu_id).ProjectToFirst<MenuDto>();
+                    if(clildmenu!=null)
+                    {
+                        menu.ClildMenus.Add(clildmenu);
+                    }
+                }
+                menus.Add(menu);
+                
+            }
+            userMenus.Menus = menus;
+            return userMenus;
+        }
+
     }
 }

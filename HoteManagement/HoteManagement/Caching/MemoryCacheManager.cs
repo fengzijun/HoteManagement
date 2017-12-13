@@ -13,7 +13,7 @@ namespace HoteManagement.Caching
         /// <summary>
         /// Cache object
         /// </summary>
-        protected ObjectCache Cache
+        protected MemoryCache Cache
         {
             get
             {
@@ -46,6 +46,11 @@ namespace HoteManagement.Caching
             var policy = new CacheItemPolicy();
             policy.AbsoluteExpiration = DateTime.Now + TimeSpan.FromSeconds(cacheTime);
             Cache.Add(new CacheItem(key, data), policy);
+        }
+
+        public virtual T Get<T>(string key,Func<string,T> func, DateTimeOffset cacheTime)
+        {
+            return Cache.AddOrGetExisting<T>(key, func, cacheTime);
         }
 
         /// <summary>

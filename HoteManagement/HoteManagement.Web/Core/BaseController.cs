@@ -1,4 +1,6 @@
-﻿using HoteManagement.Infrastructure;
+﻿using HoteManagement.Caching;
+using HoteManagement.Infrastructure;
+using HoteManagement.Service.Model;
 using HoteManagement.Service.Pay;
 using HoteManagement.Service.Room;
 using HoteManagement.Service.Sys;
@@ -10,6 +12,7 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace HoteManagement.Web.Core
 {
@@ -22,6 +25,7 @@ namespace HoteManagement.Web.Core
         protected readonly IUserService userService;
         protected readonly ILogger logger;
         protected readonly IWebHelper webHelper;
+        protected readonly ICacheManager cacheManager;
 
         public BaseController()
         {
@@ -31,6 +35,9 @@ namespace HoteManagement.Web.Core
             userService = EngineContext.Current.Resolve<IUserService>();
             logger = EngineContext.Current.Resolve<ILogger>();
             webHelper = EngineContext.Current.Resolve<IWebHelper>();
+            cacheManager = EngineContext.Current.Resolve<ICacheManager>();
+
+            GetMenus();
         }
 
 
@@ -107,5 +114,49 @@ namespace HoteManagement.Web.Core
           
         }
 
+
+        public Accounts_UsersDto UserInfo { get {
+                try
+                {
+                    
+                    HttpCookie authCookie = System.Web.HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName];
+                    if (authCookie != null)
+                    {
+
+                        FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+                        if (authTicket == null || string.IsNullOrEmpty(authTicket.UserData))
+                            return null;
+                        Accounts_UsersDto user = Newtonsoft.Json.JsonConvert.DeserializeObject<Accounts_UsersDto>(authTicket.UserData);
+
+                        return user;
+
+                    }
+
+                    return null;
+                }
+                catch
+                {
+                    return null;
+                }
+
+
+            }
+        }
+
+
+        public void GetMenus()
+        {
+            if (UserInfo == null)
+                return;
+            var menus = cacheManager.Get<UserMenus>(Const.MENUKEY, (item) =>
+            {
+                return userService.GetAccountMenus(UserInfo.Id);
+            }, DateTimeOffset.Now.AddHours(1));
+
+            if(menus!=null)
+            {
+                TempData[Const.MENUKEY] = menus;
+            }
+        }
     }
 }

@@ -46,5 +46,8 @@ namespace HoteManagement.Caching
         /// Clear all cache data
         /// </summary>
         void Clear();
+
+
+        T Get<T>(string key, Func<string, T> func, DateTimeOffset cachetime);
     }
 }

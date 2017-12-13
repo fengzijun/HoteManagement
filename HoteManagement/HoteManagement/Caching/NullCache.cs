@@ -1,3 +1,5 @@
+using System;
+
 namespace HoteManagement.Caching
 {
     /// <summary>
@@ -64,6 +66,11 @@ namespace HoteManagement.Caching
         /// </summary>
         public virtual void Dispose()
         {
+        }
+
+        public T Get<T>(string key, Func<string, T> func, DateTimeOffset cachetime)
+        {
+            throw new NotImplementedException();
         }
     }
 }

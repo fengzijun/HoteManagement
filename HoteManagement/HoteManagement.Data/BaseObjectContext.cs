@@ -56,6 +56,8 @@ namespace HoteManagement.Data
             //...or do it manually below. For example,
             //modelBuilder.Configurations.Add(new LanguageMap());
 
+            modelBuilder.Conventions.Remove<System.Data.Entity.ModelConfiguration.Conventions.PluralizingTableNameConvention>();
+
             base.OnModelCreating(modelBuilder);
         }
 

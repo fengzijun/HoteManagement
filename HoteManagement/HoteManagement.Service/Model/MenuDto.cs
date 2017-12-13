@@ -23,4 +23,31 @@ namespace HoteManagement.Service.Model
         public Nullable<int> sortId { get; set; }
         public Nullable<bool> isable { get; set; }
     }
+
+    public class Menu
+    {
+
+        public Menu()
+        {
+            ClildMenus = new List<MenuDto>();
+        }
+
+        public MenuDto ParentMenu { get; set; }
+        public List<MenuDto> ClildMenus { get; set; }
+    }
+
+
+    public class UserMenus
+    {
+
+        public UserMenus()
+        {
+            Menus = new List<Menu>();
+        }
+
+        public int UserId { get; set; }
+        public int RoleId { get; set; }
+
+        public List<Menu> Menus { get; set; }
+    }
 }

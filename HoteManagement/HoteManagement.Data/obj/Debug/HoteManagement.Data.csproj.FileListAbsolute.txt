@@ -1,5 +1,3 @@
-D:\HoteManagement\HoteManagement\HoteManagement.Data\obj\Debug\HoteManagement.Data.csprojResolveAssemblyReference.cache
-D:\HoteManagement\HoteManagement\HoteManagement.Data\obj\Debug\HoteManagement.Data.csproj.CoreCompileInputs.cache
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\HoteManagement.Data.dll.config
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\HoteManagement.Data.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\HoteManagement.Data.pdb
@@ -8,12 +6,14 @@ D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\EntityFramework.S
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\EntityFramework.SqlServerCompact.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\HoteManagement.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\System.Data.SqlServerCe.dll
+D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\System.Web.Http.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\Castle.Core.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\Autofac.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\StackExchange.Redis.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\Autofac.Integration.Mvc.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\System.Web.Mvc.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\Newtonsoft.Json.dll
+D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\Z.Caching.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\Microsoft.Web.Infrastructure.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\System.Web.Razor.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\System.Web.WebPages.Razor.dll
@@ -24,6 +24,7 @@ D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\HoteManagement.dl
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\EntityFramework.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\EntityFramework.SqlServerCompact.xml
+D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\System.Web.Http.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\Castle.Core.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\Autofac.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\StackExchange.Redis.xml
@@ -34,5 +35,8 @@ D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\System.Web.Razor.
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\System.Web.WebPages.Razor.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\System.Web.WebPages.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\HoteManagement\HoteManagement\HoteManagement.Data\bin\Debug\zh-Hans\System.Web.Http.resources.dll
+D:\HoteManagement\HoteManagement\HoteManagement.Data\obj\Debug\HoteManagement.Data.csprojResolveAssemblyReference.cache
+D:\HoteManagement\HoteManagement\HoteManagement.Data\obj\Debug\HoteManagement.Data.csproj.CoreCompileInputs.cache
 D:\HoteManagement\HoteManagement\HoteManagement.Data\obj\Debug\HoteManagement.Data.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Data\obj\Debug\HoteManagement.Data.pdb

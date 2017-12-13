@@ -1,5 +1,3 @@
-D:\HoteManagement\HoteManagement\HoteManagement.Service\obj\Debug\HoteManagement.Service.csprojResolveAssemblyReference.cache
-D:\HoteManagement\HoteManagement\HoteManagement.Service\obj\Debug\HoteManagement.Service.csproj.CoreCompileInputs.cache
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\HoteManagement.Service.dll.config
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\HoteManagement.Service.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\HoteManagement.Service.pdb
@@ -16,11 +14,13 @@ D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\HoteManagement
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\HoteManagement.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\log4net.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\Mono.Reflection.dll
+D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\System.Web.Http.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\System.Data.SqlServerCe.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\StackExchange.Redis.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\Autofac.Integration.Mvc.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\System.Web.Mvc.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\Newtonsoft.Json.dll
+D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\Z.Caching.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\System.Web.Razor.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\System.Web.WebPages.Razor.dll
@@ -37,6 +37,7 @@ D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\Castle.Core.xm
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\EntityFramework.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\EntityFramework.SqlServer.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\log4net.xml
+D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\System.Web.Http.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\StackExchange.Redis.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\Autofac.Integration.Mvc.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\System.Web.Mvc.xml
@@ -47,5 +48,8 @@ D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\System.Web.Web
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\zh-Hans\System.Web.Http.resources.dll
+D:\HoteManagement\HoteManagement\HoteManagement.Service\obj\Debug\HoteManagement.Service.csprojResolveAssemblyReference.cache
+D:\HoteManagement\HoteManagement\HoteManagement.Service\obj\Debug\HoteManagement.Service.csproj.CoreCompileInputs.cache
 D:\HoteManagement\HoteManagement\HoteManagement.Service\obj\Debug\HoteManagement.Service.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\obj\Debug\HoteManagement.Service.pdb

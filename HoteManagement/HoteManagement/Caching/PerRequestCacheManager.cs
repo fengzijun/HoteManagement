@@ -142,5 +142,11 @@ namespace HoteManagement.Caching
         public virtual void Dispose()
         {
         }
+
+
+        public T Get<T>(string key, Func<string, T> func, DateTimeOffset cachetime)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
