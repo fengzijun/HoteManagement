@@ -324,5 +324,112 @@ namespace HoteManagement.Service.User
             return result.ProjectToList<ContactsDto>();
 
         }
+
+        public void AddMember(memberDto member)
+        {
+            Domain.member model = AutoMapper.Mapper.Map<Domain.member>(member);
+            _memberRepository.Insert(model);
+        }
+
+        public void UpdateMember(memberDto member)
+        {
+            Domain.member model = AutoMapper.Mapper.Map<Domain.member>(member);
+            _memberRepository.Update(model);
+        }
+
+
+        public virtual memberDto GetMember(int id)
+        {
+            return _memberRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<memberDto>();
+        }
+
+        public virtual memberStateDto GetMemberState(int id)
+        {
+            return _memberstateRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<memberStateDto>();
+        }
+
+        public virtual List<memberTypeDto> GetmembertypeList(string name,int? stateid,int? mtype,DateTime? startime ,DateTime? endtime)
+        {
+            var result = _memberRepository.TableNoTracking;
+            if (!string.IsNullOrEmpty(name))
+                result = result.Where(s => s.Name.StartsWith(name));
+            if(stateid.HasValue)
+                result = result.Where(s => s.Statid == stateid);
+
+            if (mtype.HasValue)
+                result = result.Where(s => s.Mtype == mtype);
+
+            if(startime.HasValue)
+                result = result.Where(s => s.Baithday > startime);
+
+            if (endtime.HasValue)
+                result = result.Where(s => s.Baithday < endtime);
+
+            return result.ProjectToList<memberTypeDto>();
+        }
+
+
+        public virtual memberTypeDto Getmembertype(int id)
+        {
+            return _membertypeRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirstOrDefault<memberTypeDto>();
+        }
+
+        public virtual void AddMemberType(memberTypeDto memberType)
+        {
+            Domain.memberType model = AutoMapper.Mapper.Map<Domain.memberType>(memberType);
+            _membertypeRepository.Insert(model);
+        }
+
+        public virtual void UpdateMemberType(memberTypeDto memberType)
+        {
+            Domain.memberType model = AutoMapper.Mapper.Map<Domain.memberType>(memberType);
+            _membertypeRepository.Update(model);
+        }
+
+        public virtual List<UsersDto> GetUserList(string userid,int? id,int? usertype)
+        {
+            var result = _usersRepository.TableNoTracking;
+            if (!string.IsNullOrEmpty(userid))
+                result = result.Where(s => s.userid == userid);
+            if (usertype.HasValue)
+                result = result.Where(s => s.user_type == usertype);
+            if (id.HasValue)
+                result = result.Where(s => s.Id == id.Value);
+
+            return result.ProjectToList<UsersDto>();
+        }
+
+
+        public virtual List<userTypeDto> GetUserTypeList(int? typeid)
+        {
+            var result = _usertypeRepository.TableNoTracking;
+            if (typeid.HasValue)
+                result = result.Where(s => s.typeid == typeid);
+
+            return result.ProjectToList<userTypeDto>();
+        }
+
+        public virtual userTypeDto GetUserType(int id)
+        {
+
+            return _usertypeRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirstOrDefault<userTypeDto>();
+        }
+
+        public virtual void AddUserType(userTypeDto userType)
+        {
+            Domain.userType model = AutoMapper.Mapper.Map<Domain.userType>(userType);
+            _usertypeRepository.Insert(model);
+        }
+
+        public virtual void UpdateUserType(userTypeDto userType)
+        {
+            Domain.userType model = AutoMapper.Mapper.Map<Domain.userType>(userType);
+            _usertypeRepository.Update(model);
+        }
+
+        public virtual List<mtPriceDto> GetMtPrice(int mtid)
+        {
+            return _mtpriceRepository.TableNoTracking.Where(s => s.MTID == mtid).ProjectToList<mtPriceDto>();
+        }
     }
 }

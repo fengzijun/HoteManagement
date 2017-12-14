@@ -316,6 +316,52 @@ namespace HoteManagement.Service.Sys
 
 
 
+        public virtual List<AddPriceDto> GetAddPriceList()
+        {
+            return _addpriceRepository.TableNoTracking.ProjectToList<AddPriceDto>();
+        }
+
+
+        public virtual void AddmRecords(mRecordsDto mRecords)
+        {
+            Domain.mRecords records = AutoMapper.Mapper.Map<Domain.mRecords>(mRecords);
+            _mrecordsRepository.Insert(records);
+        }
+
+        public virtual List<mRecordsDto> GetmRecords(string mid)
+        {
+
+            var result = _mrecordsRepository.TableNoTracking;
+            if (!string.IsNullOrEmpty(mid))
+                result = result.Where(s => s.mmid == mid);
    
+            return result.ProjectToList<mRecordsDto>();
+
+        }
+
+
+        public virtual List<mRecordsDto> GetmRecordsByType(string mid)
+        {
+
+            var result = _mrecordsRepository.TableNoTracking;
+            if (!string.IsNullOrEmpty(mid))
+                result = result.Where(s => s.mmid == mid);
+            result = result.Where(s => s.Type == 3 || s.Type == 4);
+
+            return result.ProjectToList<mRecordsDto>();
+
+        }
+
+        public virtual List<mRecordsDto> GetmRecordsByType2(string mid)
+        {
+
+            var result = _mrecordsRepository.TableNoTracking;
+            if (!string.IsNullOrEmpty(mid))
+                result = result.Where(s => s.mmid == mid);
+            result = result.Where(s => s.Type == 1 || s.Type == 2);
+
+            return result.ProjectToList<mRecordsDto>();
+
+        }
     }
 }
