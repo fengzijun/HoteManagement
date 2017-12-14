@@ -23,5 +23,46 @@ namespace HoteManagement.Service.User
         void UpdateAccountUser(Accounts_UsersDto user);
 
         UserMenus GetAccountMenus(int userid);
+
+        customerDto GetCustomer(string account);
+      
+
+        customerDto GetCustomerById(int id);
+      
+
+        void UpdateCustomer(customerDto customer);
+
+
+        List<CommissionDto> GetCommission(string account);
+
+
+        CommissionDto GetCommissionById(int id);
+
+
+        List<CommissionDto> GetCommissionByIds(int[] ids);
+
+
+        void Addcprotocol(cprotocolDto cprotocol);
+
+
+        void Updatecprotocol(cprotocolDto cprotocol);
+
+
+        cprotocolDto GetcprotocolById(int id);
+
+
+        List<cprotocolDto> Getcprotocol(string account);
+
+
+        List<cprotocolPriceDto> GetcprotocolPrice(string accounts, int? cpid);
+
+
+        void AddcprotocolPrice(cprotocolPriceDto cprotocolPrice);
+
+
+        void UpdatecprotocolPrice(cprotocolPriceDto cprotocolPrice);
+
+        List<ContactsDto> GetContacts(string account);
+      
     }
 }

@@ -48,7 +48,6 @@ D:\HoteManagement\HoteManagement\HoteManagement.Web\bin\System.Data.SqlServerCe.
 D:\HoteManagement\HoteManagement\HoteManagement.Web\bin\AutoMapper.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Web\bin\AutoMapper.EF6.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Web\bin\StackExchange.Redis.dll
-D:\HoteManagement\HoteManagement\HoteManagement.Web\bin\Z.Caching.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Web\bin\DelegateDecompiler.EntityFramework.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Web\bin\DelegateDecompiler.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Web\bin\Mono.Reflection.dll

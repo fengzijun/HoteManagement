@@ -20,7 +20,6 @@ D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\StackExchange.
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\Autofac.Integration.Mvc.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\System.Web.Mvc.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\Newtonsoft.Json.dll
-D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\Z.Caching.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\System.Web.Razor.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Service\bin\Debug\System.Web.WebPages.Razor.dll

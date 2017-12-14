@@ -233,5 +233,96 @@ namespace HoteManagement.Service.User
             return userMenus;
         }
 
+
+        public customerDto GetCustomer(string account)
+        {
+            return _customerRepository.TableNoTracking.Where(s => s.accounts == account).ProjectToFirstOrDefault<customerDto>();
+        }
+
+        public customerDto GetCustomerById(int id)
+        {
+            return _customerRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<customerDto>();
+        }
+
+        public void UpdateCustomer(customerDto customer)
+        {
+            Domain.customer model = AutoMapper.Mapper.Map<Domain.customer>(customer);
+            _customerRepository.Update(model);
+        }
+
+        public List<CommissionDto> GetCommission(string account)
+        {
+            var result = _commissionRepository.TableNoTracking;
+            if (!string.IsNullOrEmpty(account))
+                result = result.Where(s => s.Accounts == account);
+
+            return result.ProjectToList<CommissionDto>();
+        }
+
+        public CommissionDto GetCommissionById(int id)
+        {
+            return _commissionRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirst<CommissionDto>();
+        }
+
+        public List<CommissionDto> GetCommissionByIds(int[] ids)
+        {
+            return _commissionRepository.TableNoTracking.Where(s => ids.Contains( s.Id)).ProjectToList<CommissionDto>();
+        }
+
+        public void Addcprotocol(cprotocolDto cprotocol)
+        {
+            Domain.cprotocol model = AutoMapper.Mapper.Map<Domain.cprotocol>(cprotocol);
+            _cprotocolRepository.Insert(model);
+        }
+
+        public void Updatecprotocol(cprotocolDto cprotocol)
+        {
+            Domain.cprotocol model = AutoMapper.Mapper.Map<Domain.cprotocol>(cprotocol);
+            _cprotocolRepository.Update(model);
+        }
+
+        public cprotocolDto GetcprotocolById(int id)
+        {
+            return _cprotocolRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<cprotocolDto>();
+        }
+
+        public List<cprotocolDto> Getcprotocol(string account)
+        {
+            return _cprotocolRepository.TableNoTracking.Where(s => s.Accounts == account).ProjectToList<cprotocolDto>();
+        }
+
+        public List<cprotocolPriceDto> GetcprotocolPrice(string accounts , int? cpid)
+        {
+            var result = _cprotocolpriceRepository.TableNoTracking;
+            if (!string.IsNullOrEmpty(accounts))
+                result = result.Where(s => s.Accounts == accounts);
+            if (cpid.HasValue)
+                result = result.Where(s => s.cpID == cpid.Value);
+
+            return result.ProjectToList<cprotocolPriceDto>();
+
+        }
+
+        public void AddcprotocolPrice(cprotocolPriceDto cprotocolPrice)
+        {
+            Domain.cprotocolPrice model = AutoMapper.Mapper.Map<Domain.cprotocolPrice>(cprotocolPrice);
+            _cprotocolpriceRepository.Insert(model);
+        }
+
+        public void UpdatecprotocolPrice(cprotocolPriceDto cprotocolPrice)
+        {
+            Domain.cprotocolPrice model = AutoMapper.Mapper.Map<Domain.cprotocolPrice>(cprotocolPrice);
+            _cprotocolpriceRepository.Update(model);
+        }
+
+        public virtual List<ContactsDto> GetContacts(string account)
+        {
+            var result = _contactsRepository.TableNoTracking;
+            if (!string.IsNullOrEmpty(account))
+                result = result.Where(s => s.Accounts == account);
+
+            return result.ProjectToList<ContactsDto>();
+
+        }
     }
 }

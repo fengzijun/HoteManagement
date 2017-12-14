@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace HoteManagement.Service.Sys
 {
@@ -175,5 +176,146 @@ namespace HoteManagement.Service.Sys
         }
 
 
+
+        public virtual int GetBannerCount()
+        {
+            int count = _bannerRepository.TableNoTracking.Count();
+            if (count == 0)
+                return 1;
+            else
+                return count + 1;
+        }
+
+        public virtual void AddBanner(bannerDto bannerDto)
+        {
+            Domain.banner banner = AutoMapper.Mapper.Map<Domain.banner>(bannerDto);
+            banner.banner_id = Guid.NewGuid().ToString();
+
+            _bannerRepository.Insert(banner);
+
+        }
+
+        public virtual IPagedList<bannerDto> GetBannerPageList(int pageindex,int pagesize)
+        {
+            var resultquery = _bannerRepository.TableNoTracking.OrderByDescending(s => s.sortId);
+
+            var list = new PagedList<bannerDto>(resultquery.ProjectToQueryable<bannerDto>(), pageindex, pagesize);
+
+            return list;
+        }
+
+        public virtual bannerDto GetBannerByBannerId(string id)
+        {
+            return _bannerRepository.TableNoTracking.Where(s => s.banner_id == id).ProjectToFirst<bannerDto>();
+        }
+
+        public virtual void UpdateBanner(bannerDto banner)
+        {
+            Domain.banner model = AutoMapper.Mapper.Map<Domain.banner>(banner);
+            _bannerRepository.Update(model);
+        }
+
+        public virtual SysParamterDto GetSysParamterById(int id)
+        {
+            return _sysparamterRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<SysParamterDto>();
+        }
+
+        public virtual List<cCallDto> GetCCallList()
+        {
+            return _ccallRepository.TableNoTracking.ProjectToList<cCallDto>();
+        }
+
+        public virtual cCallDto GetCCall(int id)
+        {
+            return _ccallRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirst<cCallDto>();
+        }
+
+
+        public virtual List<cpTypeDto> GetcptypeList()
+        {
+            return _cptypeRepository.TableNoTracking.ProjectToList<cpTypeDto>();
+        }
+
+        public virtual cpTypeDto Getcptype(int id)
+        {
+            return _cptypeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirst<cpTypeDto>();
+        }
+
+
+        public virtual List<cDepartmentDto> GetcDepartmentList()
+        {
+            return _cdepartmentRepository.TableNoTracking.ProjectToList<cDepartmentDto>();
+        }
+
+        public virtual cDepartmentDto GetcDepartment(int id)
+        {
+            return _cdepartmentRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirst<cDepartmentDto>();
+        }
+
+
+        public virtual List<cPostDto> GetcPostList()
+        {
+            return _cpostRepository.TableNoTracking.ProjectToList<cPostDto>();
+        }
+
+        public virtual cPostDto GetcPost(int id)
+        {
+            return _cdepartmentRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirst<cPostDto>();
+        }
+
+        public virtual List<csysTypeDto> GetcsysTypeList()
+        {
+            return _csystypeRepository.TableNoTracking.ProjectToList<csysTypeDto>();
+        }
+
+        public virtual List<customerTypeDto> GetcustomerTypeList()
+        {
+            return _customertypeRepository.TableNoTracking.ProjectToList<customerTypeDto>();
+        }
+
+        public virtual List<customerStateDto> GetcustomerStateList()
+        {
+            return _customerstateRepository.TableNoTracking.ProjectToList<customerStateDto>();
+        }
+
+        public virtual customerStateDto GetcustomerState(int id)
+        {
+            return _customerstateRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirst<customerStateDto>();
+        }
+
+
+
+        public virtual List<cIndustryDto> GetcIndustryList()
+        {
+            return _cindustryRepository.TableNoTracking.ProjectToList<cIndustryDto>();
+        }
+
+        public virtual cIndustryDto GetcIndustry(int id)
+        {
+            return _cindustryRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirst<cIndustryDto>();
+        }
+
+        public virtual List<cost_typeDto> GetCostType(int? ct_iftype,int? ct_categories)
+        {
+            var result = _cost_typeRepository.TableNoTracking;
+            if (ct_iftype.HasValue)
+                result = result.Where(s => s.ct_iftype == ct_iftype);
+
+            if (ct_categories.HasValue)
+                result = result.Where(s => s.ct_categories == ct_categories);
+
+            return result.ProjectToList<cost_typeDto>();
+        }
+
+
+        public virtual GoodsDto GetGoods(int id)
+        {
+            return _goodsRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirst<GoodsDto>();
+
+        }
+
+
+
+   
     }
 }

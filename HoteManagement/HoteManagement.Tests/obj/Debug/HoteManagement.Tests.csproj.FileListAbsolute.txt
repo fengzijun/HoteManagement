@@ -45,7 +45,6 @@ D:\HoteManagement\HoteManagement\HoteManagement.Tests\bin\Debug\zh-Hans\System.W
 D:\HoteManagement\HoteManagement\HoteManagement.Tests\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Tests\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Tests\bin\Debug\zh-Hans\System.Web.Optimization.resources.dll
-D:\HoteManagement\HoteManagement\HoteManagement.Tests\obj\Debug\HoteManagement.Tests.csprojResolveAssemblyReference.cache
 D:\HoteManagement\HoteManagement\HoteManagement.Tests\obj\Debug\HoteManagement.Tests.csproj.CoreCompileInputs.cache
 D:\HoteManagement\HoteManagement\HoteManagement.Tests\obj\Debug\HoteManagement.Tests.dll
 D:\HoteManagement\HoteManagement\HoteManagement.Tests\obj\Debug\HoteManagement.Tests.pdb

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace HoteManagement.Service.Pay
 {
@@ -174,6 +175,24 @@ namespace HoteManagement.Service.Pay
         {
         }
 
-        
+        public void AddGoodsAccount(goods_accountDto goodaccount)
+        {
+            Domain.goods_account model = AutoMapper.Mapper.Map<Domain.goods_account>(goodaccount);
+            _goods_accountRepository.Insert(model);
+        }
+
+        public List<meth_payDto> GetMethPayList(bool? methisya, bool? meth_is_jie)
+        {
+            var result = _meth_payRepository.TableNoTracking;
+
+            if (methisya.HasValue)
+                result = result.Where(s => s.meth_is_ya == methisya);
+            if (meth_is_jie.HasValue)
+                result = result.Where(s => s.meth_is_jie == meth_is_jie);
+
+            return result.ProjectToList<meth_payDto>();
+        }
+
+
     }
 }

@@ -151,7 +151,7 @@ namespace HoteManagement.Web.Core
             var menus = cacheManager.Get<UserMenus>(Const.MENUKEY, () =>
             {
                 return userService.GetAccountMenus(UserInfo.Id);
-            }, 30);
+            }, 60*60*5);
 
 
             var temp = cacheManager.Get<HoteManagement.Service.Model.UserMenus>(HoteManagement.Web.Core.Const.MENUKEY);
