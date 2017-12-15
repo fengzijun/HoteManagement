@@ -73,3 +73,4 @@ G:\HoteManagement\HoteManagement\HoteManagement\obj\Debug\HoteManagement.csprojR
 G:\HoteManagement\HoteManagement\HoteManagement\obj\Debug\HoteManagement.csproj.CoreCompileInputs.cache
 G:\HoteManagement\HoteManagement\HoteManagement\obj\Debug\HoteManagement.dll
 G:\HoteManagement\HoteManagement\HoteManagement\obj\Debug\HoteManagement.pdb
+D:\HoteManagement\HoteManagement\HoteManagement\obj\Debug\HoteManagement.csprojResolveAssemblyReference.cache

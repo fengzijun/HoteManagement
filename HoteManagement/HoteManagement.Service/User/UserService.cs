@@ -181,6 +181,12 @@ namespace HoteManagement.Service.User
             return _accounts_usersRepository.TableNoTracking.Where(s => s.UserName == username && s.Password == pwd).FirstOrDefault() != null;
         }
 
+        public virtual void AddAccountUser(Accounts_UsersDto user)
+        {
+            Domain.Accounts_Users accounts_Users = AutoMapper.Mapper.Map<Domain.Accounts_Users>(user);
+            _accounts_usersRepository.Insert(accounts_Users);
+        }
+
         public virtual void UpdateAccountUser(Accounts_UsersDto user)
         {
             Domain.Accounts_Users accounts_Users = AutoMapper.Mapper.Map<Domain.Accounts_Users>(user);
@@ -323,6 +329,176 @@ namespace HoteManagement.Service.User
 
             return result.ProjectToList<ContactsDto>();
 
+        }
+
+        public void AddMember(memberDto member)
+        {
+            Domain.member model = AutoMapper.Mapper.Map<Domain.member>(member);
+            _memberRepository.Insert(model);
+        }
+
+        public void UpdateMember(memberDto member)
+        {
+            Domain.member model = AutoMapper.Mapper.Map<Domain.member>(member);
+            _memberRepository.Update(model);
+        }
+
+
+        public virtual memberDto GetMember(int id)
+        {
+            return _memberRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<memberDto>();
+        }
+
+        public virtual memberStateDto GetMemberState(int id)
+        {
+            return _memberstateRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<memberStateDto>();
+        }
+
+        public virtual List<memberTypeDto> GetmembertypeList(string name,int? stateid,int? mtype,DateTime? startime ,DateTime? endtime)
+        {
+            var result = _memberRepository.TableNoTracking;
+            if (!string.IsNullOrEmpty(name))
+                result = result.Where(s => s.Name.StartsWith(name));
+            if(stateid.HasValue)
+                result = result.Where(s => s.Statid == stateid);
+
+            if (mtype.HasValue)
+                result = result.Where(s => s.Mtype == mtype);
+
+            if(startime.HasValue)
+                result = result.Where(s => s.Baithday > startime);
+
+            if (endtime.HasValue)
+                result = result.Where(s => s.Baithday < endtime);
+
+            return result.ProjectToList<memberTypeDto>();
+        }
+
+
+        public virtual memberTypeDto Getmembertype(int id)
+        {
+            return _membertypeRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirstOrDefault<memberTypeDto>();
+        }
+
+        public virtual void AddMemberType(memberTypeDto memberType)
+        {
+            Domain.memberType model = AutoMapper.Mapper.Map<Domain.memberType>(memberType);
+            _membertypeRepository.Insert(model);
+        }
+
+        public virtual void UpdateMemberType(memberTypeDto memberType)
+        {
+            Domain.memberType model = AutoMapper.Mapper.Map<Domain.memberType>(memberType);
+            _membertypeRepository.Update(model);
+        }
+
+        public virtual List<UsersDto> GetUserList(string userid,int? id,int? usertype)
+        {
+            var result = _usersRepository.TableNoTracking;
+            if (!string.IsNullOrEmpty(userid))
+                result = result.Where(s => s.userid == userid);
+            if (usertype.HasValue)
+                result = result.Where(s => s.user_type == usertype);
+            if (id.HasValue)
+                result = result.Where(s => s.Id == id.Value);
+
+            return result.ProjectToList<UsersDto>();
+        }
+
+
+        public virtual List<userTypeDto> GetUserTypeList(int? typeid)
+        {
+            var result = _usertypeRepository.TableNoTracking;
+            if (typeid.HasValue)
+                result = result.Where(s => s.typeid == typeid);
+
+            return result.ProjectToList<userTypeDto>();
+        }
+
+        public virtual userTypeDto GetUserType(int id)
+        {
+
+            return _usertypeRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirstOrDefault<userTypeDto>();
+        }
+
+        public virtual void AddUserType(userTypeDto userType)
+        {
+            Domain.userType model = AutoMapper.Mapper.Map<Domain.userType>(userType);
+            _usertypeRepository.Insert(model);
+        }
+
+        public virtual void UpdateUserType(userTypeDto userType)
+        {
+            Domain.userType model = AutoMapper.Mapper.Map<Domain.userType>(userType);
+            _usertypeRepository.Update(model);
+        }
+
+        public virtual List<mtPriceDto> GetMtPrice(int mtid)
+        {
+            return _mtpriceRepository.TableNoTracking.Where(s => s.MTID == mtid).ProjectToList<mtPriceDto>();
+        }
+
+
+        public void AddAccountsUserRoles(Accounts_UserRolesDto AccountsUserRoles)
+        {
+            Domain.Accounts_UserRoles model = AutoMapper.Mapper.Map<Domain.Accounts_UserRoles>(AccountsUserRoles);
+            _accounts_userrolesRepository.Insert(model);
+
+        }
+
+        public void UpdateAccountsUserRoles(Accounts_UserRolesDto AccountsUserRoles)
+        {
+            Domain.Accounts_UserRoles model = AutoMapper.Mapper.Map<Domain.Accounts_UserRoles>(AccountsUserRoles);
+            _accounts_userrolesRepository.Update(model);
+
+        }
+
+        public Accounts_UserRolesDto GetAccountsUserRolesById(int id)
+        {
+            return _accounts_userrolesRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_UserRolesDto>();
+        }
+
+        public List<Accounts_UserRolesDto> GetAccountsUserRolesList()
+        {
+            var result = _accounts_userrolesRepository.TableNoTracking;
+        
+            return result.ProjectToList<Accounts_UserRolesDto>();
+        }
+
+        public void DeleteAccountsUserRoles(int id)
+        {
+            _accounts_userrolesRepository.Delete(id);
+        }
+
+        public void AddAccounts_Roles(Accounts_RolesDto Accounts_Roles)
+        {
+            Domain.Accounts_Roles model = AutoMapper.Mapper.Map<Domain.Accounts_Roles>(Accounts_Roles);
+            _accounts_rolesRepository.Insert(model);
+
+        }
+
+        public void UpdateAccounts_Roles(Accounts_RolesDto Accounts_Roles)
+        {
+            Domain.Accounts_Roles model = AutoMapper.Mapper.Map<Domain.Accounts_Roles>(Accounts_Roles);
+            _accounts_rolesRepository.Update(model);
+
+        }
+
+        public Accounts_RolesDto GetAccounts_RolesById(int id)
+        {
+            return _accounts_rolesRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_RolesDto>();
+        }
+
+        public List<Accounts_UserRolesDto> GetAccounts_RolesList()
+        {
+            var result = _accounts_rolesRepository.TableNoTracking;
+
+            return result.ProjectToList<Accounts_UserRolesDto>();
+        }
+
+        public void DeleteAccounts_Roles(int id)
+        {
+            _accounts_rolesRepository.Delete(id);
         }
     }
 }

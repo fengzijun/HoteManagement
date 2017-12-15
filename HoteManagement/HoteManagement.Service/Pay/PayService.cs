@@ -193,6 +193,32 @@ namespace HoteManagement.Service.Pay
             return result.ProjectToList<meth_payDto>();
         }
 
+        public void Addmeth_pay(meth_payDto meth_Pay)
+        {
+            Domain.meth_pay model = AutoMapper.Mapper.Map<Domain.meth_pay>(meth_Pay);
+            _meth_payRepository.Insert(model);
+
+        }
+
+        public void Updatemeth_pay(meth_payDto meth_Pay)
+        {
+            Domain.meth_pay model = AutoMapper.Mapper.Map<Domain.meth_pay>(meth_Pay);
+            _meth_payRepository.Update(model);
+
+        }
+
+        public meth_payDto Getmeth_payId(int id)
+        {
+            return _meth_payRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<meth_payDto>();
+        }
+
+  
+
+        public void Deletemeth_pay(int id)
+        {
+            _meth_payRepository.Delete(id);
+        }
+
 
     }
 }

@@ -102,3 +102,4 @@ G:\HoteManagement\HoteManagement\HoteManagement.Tests\obj\Debug\HoteManagement.T
 G:\HoteManagement\HoteManagement\HoteManagement.Tests\obj\Debug\HoteManagement.Tests.csproj.CoreCompileInputs.cache
 G:\HoteManagement\HoteManagement\HoteManagement.Tests\obj\Debug\HoteManagement.Tests.dll
 G:\HoteManagement\HoteManagement\HoteManagement.Tests\obj\Debug\HoteManagement.Tests.pdb
+D:\HoteManagement\HoteManagement\HoteManagement.Tests\obj\Debug\HoteManagement.Tests.csprojResolveAssemblyReference.cache

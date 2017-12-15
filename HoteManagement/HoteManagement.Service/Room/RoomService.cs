@@ -371,5 +371,106 @@ namespace HoteManagement.Service.Room
 
             _goods_accountRepository.Insert(model);
         }
+
+        public room_numberDto GetRoom_NumberById(int id)
+        {
+            return _room_numberRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<room_numberDto>();
+        }
+
+        public void DeleteFloorManage(int id)
+        {
+            _floor_manageRepository.Delete(id);
+        }
+
+        public void DeleteRoomType(int id)
+        {
+            _room_typeRepository.Delete(id);
+        }
+
+        public void DeleteRoomNumber(int id)
+        {
+            _room_numberRepository.Delete(id);
+        }
+
+        public void AddRoomType(room_typeDto room_Type)
+        {
+            Domain.room_type model = AutoMapper.Mapper.Map<Domain.room_type>(room_Type);
+            _room_typeRepository.Insert(model);
+        }
+
+        public void UpdateRoomType(room_typeDto room_Type)
+        {
+            Domain.room_type model = AutoMapper.Mapper.Map<Domain.room_type>(room_Type);
+            _room_typeRepository.Update(model);
+        }
+
+        public List<room_stateDto> GetRoomStateList()
+        {
+            return _room_stateRepository.TableNoTracking.Where(s => s.room_state_name != "取消").ProjectToList<room_stateDto>();
+        }
+
+
+        public void Addroom_state(room_stateDto room_State)
+        {
+            Domain.room_state model = AutoMapper.Mapper.Map<Domain.room_state>(room_State);
+            _room_stateRepository.Insert(model);
+        }
+
+        public void Updateroom_state(room_stateDto room_State)
+        {
+            Domain.room_state model = AutoMapper.Mapper.Map<Domain.room_state>(room_State);
+            _room_stateRepository.Update(model);
+        }
+
+        public void AddFset(FtSetDto ftSet)
+        {
+            Domain.FtSet model = AutoMapper.Mapper.Map<Domain.FtSet>(ftSet);
+            _ftsetRepository.Insert(model);
+
+        }
+
+        public void UpdateFset(FtSetDto ftSet)
+        {
+            Domain.FtSet model = AutoMapper.Mapper.Map<Domain.FtSet>(ftSet);
+            _ftsetRepository.Update(model);
+
+        }
+
+        public void Addmodes(modesDto modes)
+        {
+            Domain.modes model = AutoMapper.Mapper.Map<Domain.modes>(modes);
+            _modesRepository.Insert(model);
+
+        }
+
+        public void Updatemodes(modesDto modes)
+        {
+            Domain.modes model = AutoMapper.Mapper.Map<Domain.modes>(modes);
+            _modesRepository.Update(model);
+
+        }
+
+        public modesDto GetmodesById(int id)
+        {
+            return _modesRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<modesDto>();
+        }
+
+        public List<modesDto> GetmodesList()
+        {
+            var result = _modesRepository.TableNoTracking;
+          
+            return result.ProjectToList<modesDto>();
+        }
+
+        public void Deletemodes(int id)
+        {
+            _modesRepository.Delete(id);
+        }
+
+        public IPagedList<room_numberDto> GetRoomNumberPageList(int pageindx,int pagesize)
+        {
+            return new PagedList<room_numberDto>(_room_numberRepository.TableNoTracking.ProjectToQueryable<room_numberDto>(), pageindx, pagesize);
+        }
+
     }
 }
