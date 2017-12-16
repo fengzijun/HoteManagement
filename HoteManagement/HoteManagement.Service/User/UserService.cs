@@ -240,23 +240,23 @@ namespace HoteManagement.Service.User
         }
 
 
-        public customerDto GetCustomer(string account)
+        public virtual customerDto GetCustomer(string account)
         {
             return _customerRepository.TableNoTracking.Where(s => s.accounts == account).ProjectToFirstOrDefault<customerDto>();
         }
 
-        public customerDto GetCustomerById(int id)
+        public virtual customerDto GetCustomerById(int id)
         {
             return _customerRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<customerDto>();
         }
 
-        public void UpdateCustomer(customerDto customer)
+        public virtual void UpdateCustomer(customerDto customer)
         {
             Domain.customer model = AutoMapper.Mapper.Map<Domain.customer>(customer);
             _customerRepository.Update(model);
         }
 
-        public List<CommissionDto> GetCommission(string account)
+        public virtual List<CommissionDto> GetCommission(string account)
         {
             var result = _commissionRepository.TableNoTracking;
             if (!string.IsNullOrEmpty(account))
@@ -265,39 +265,39 @@ namespace HoteManagement.Service.User
             return result.ProjectToList<CommissionDto>();
         }
 
-        public CommissionDto GetCommissionById(int id)
+        public virtual CommissionDto GetCommissionById(int id)
         {
             return _commissionRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirst<CommissionDto>();
         }
 
-        public List<CommissionDto> GetCommissionByIds(int[] ids)
+        public virtual List<CommissionDto> GetCommissionByIds(int[] ids)
         {
             return _commissionRepository.TableNoTracking.Where(s => ids.Contains( s.Id)).ProjectToList<CommissionDto>();
         }
 
-        public void Addcprotocol(cprotocolDto cprotocol)
+        public virtual void Addcprotocol(cprotocolDto cprotocol)
         {
             Domain.cprotocol model = AutoMapper.Mapper.Map<Domain.cprotocol>(cprotocol);
             _cprotocolRepository.Insert(model);
         }
 
-        public void Updatecprotocol(cprotocolDto cprotocol)
+        public virtual void Updatecprotocol(cprotocolDto cprotocol)
         {
             Domain.cprotocol model = AutoMapper.Mapper.Map<Domain.cprotocol>(cprotocol);
             _cprotocolRepository.Update(model);
         }
 
-        public cprotocolDto GetcprotocolById(int id)
+        public virtual cprotocolDto GetcprotocolById(int id)
         {
             return _cprotocolRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<cprotocolDto>();
         }
 
-        public List<cprotocolDto> Getcprotocol(string account)
+        public virtual List<cprotocolDto> Getcprotocol(string account)
         {
             return _cprotocolRepository.TableNoTracking.Where(s => s.Accounts == account).ProjectToList<cprotocolDto>();
         }
 
-        public List<cprotocolPriceDto> GetcprotocolPrice(string accounts , int? cpid)
+        public virtual List<cprotocolPriceDto> GetcprotocolPrice(string accounts , int? cpid)
         {
             var result = _cprotocolpriceRepository.TableNoTracking;
             if (!string.IsNullOrEmpty(accounts))
@@ -309,13 +309,13 @@ namespace HoteManagement.Service.User
 
         }
 
-        public void AddcprotocolPrice(cprotocolPriceDto cprotocolPrice)
+        public virtual void AddcprotocolPrice(cprotocolPriceDto cprotocolPrice)
         {
             Domain.cprotocolPrice model = AutoMapper.Mapper.Map<Domain.cprotocolPrice>(cprotocolPrice);
             _cprotocolpriceRepository.Insert(model);
         }
 
-        public void UpdatecprotocolPrice(cprotocolPriceDto cprotocolPrice)
+        public virtual void UpdatecprotocolPrice(cprotocolPriceDto cprotocolPrice)
         {
             Domain.cprotocolPrice model = AutoMapper.Mapper.Map<Domain.cprotocolPrice>(cprotocolPrice);
             _cprotocolpriceRepository.Update(model);
@@ -331,13 +331,13 @@ namespace HoteManagement.Service.User
 
         }
 
-        public void AddMember(memberDto member)
+        public virtual void AddMember(memberDto member)
         {
             Domain.member model = AutoMapper.Mapper.Map<Domain.member>(member);
             _memberRepository.Insert(model);
         }
 
-        public void UpdateMember(memberDto member)
+        public virtual void UpdateMember(memberDto member)
         {
             Domain.member model = AutoMapper.Mapper.Map<Domain.member>(member);
             _memberRepository.Update(model);
@@ -433,70 +433,70 @@ namespace HoteManagement.Service.User
             _usertypeRepository.Update(model);
         }
 
-        public virtual List<mtPriceDto> GetMtPrice(int mtid)
+        public virtual  List<mtPriceDto> GetMtPrice(int mtid)
         {
             return _mtpriceRepository.TableNoTracking.Where(s => s.MTID == mtid).ProjectToList<mtPriceDto>();
         }
 
 
-        public void AddAccountsUserRoles(Accounts_UserRolesDto AccountsUserRoles)
+        public virtual void AddAccountsUserRoles(Accounts_UserRolesDto AccountsUserRoles)
         {
             Domain.Accounts_UserRoles model = AutoMapper.Mapper.Map<Domain.Accounts_UserRoles>(AccountsUserRoles);
             _accounts_userrolesRepository.Insert(model);
 
         }
 
-        public void UpdateAccountsUserRoles(Accounts_UserRolesDto AccountsUserRoles)
+        public virtual void UpdateAccountsUserRoles(Accounts_UserRolesDto AccountsUserRoles)
         {
             Domain.Accounts_UserRoles model = AutoMapper.Mapper.Map<Domain.Accounts_UserRoles>(AccountsUserRoles);
             _accounts_userrolesRepository.Update(model);
 
         }
 
-        public Accounts_UserRolesDto GetAccountsUserRolesById(int id)
+        public virtual Accounts_UserRolesDto GetAccountsUserRolesById(int id)
         {
             return _accounts_userrolesRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_UserRolesDto>();
         }
 
-        public List<Accounts_UserRolesDto> GetAccountsUserRolesList()
+        public virtual List<Accounts_UserRolesDto> GetAccountsUserRolesList()
         {
             var result = _accounts_userrolesRepository.TableNoTracking;
         
             return result.ProjectToList<Accounts_UserRolesDto>();
         }
 
-        public void DeleteAccountsUserRoles(int id)
+        public virtual void DeleteAccountsUserRoles(int id)
         {
             _accounts_userrolesRepository.Delete(id);
         }
 
-        public void AddAccounts_Roles(Accounts_RolesDto Accounts_Roles)
+        public virtual void AddAccounts_Roles(Accounts_RolesDto Accounts_Roles)
         {
             Domain.Accounts_Roles model = AutoMapper.Mapper.Map<Domain.Accounts_Roles>(Accounts_Roles);
             _accounts_rolesRepository.Insert(model);
 
         }
 
-        public void UpdateAccounts_Roles(Accounts_RolesDto Accounts_Roles)
+        public virtual void UpdateAccounts_Roles(Accounts_RolesDto Accounts_Roles)
         {
             Domain.Accounts_Roles model = AutoMapper.Mapper.Map<Domain.Accounts_Roles>(Accounts_Roles);
             _accounts_rolesRepository.Update(model);
 
         }
 
-        public Accounts_RolesDto GetAccounts_RolesById(int id)
+        public virtual Accounts_RolesDto GetAccounts_RolesById(int id)
         {
             return _accounts_rolesRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_RolesDto>();
         }
 
-        public List<Accounts_UserRolesDto> GetAccounts_RolesList()
+        public virtual List<Accounts_UserRolesDto> GetAccounts_RolesList()
         {
             var result = _accounts_rolesRepository.TableNoTracking;
 
             return result.ProjectToList<Accounts_UserRolesDto>();
         }
 
-        public void DeleteAccounts_Roles(int id)
+        public virtual void DeleteAccounts_Roles(int id)
         {
             _accounts_rolesRepository.Delete(id);
         }
