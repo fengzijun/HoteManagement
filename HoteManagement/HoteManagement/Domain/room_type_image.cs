@@ -16,10 +16,12 @@ namespace HoteManagement.Domain
     public partial class room_type_image : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string imgid { get; set; }
         public Nullable<int> typeid { get; set; }
         public string imgurl { get; set; }
         public Nullable<int> sortId { get; set; }
         public Nullable<System.DateTime> pubdate { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

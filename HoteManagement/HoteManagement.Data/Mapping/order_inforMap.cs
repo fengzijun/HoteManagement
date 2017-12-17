@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public order_inforMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.order_no).HasMaxLength(50);
           this.Property(t => t.room_id).HasMaxLength(50);
           this.Property(t => t.occ_id);
@@ -26,6 +27,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.order_state).HasMaxLength(50);
           this.Property(t => t.order_time);
           this.Property(t => t.remark);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

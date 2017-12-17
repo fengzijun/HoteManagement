@@ -18,11 +18,13 @@ namespace HoteManagement.Data.Mapping
        public UsersMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.userid).HasMaxLength(50);
           this.Property(t => t.username).HasMaxLength(100);
           this.Property(t => t.passwords).HasMaxLength(100);
           this.Property(t => t.user_type);
           this.Property(t => t.pubdate);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

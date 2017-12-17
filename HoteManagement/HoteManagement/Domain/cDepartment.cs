@@ -16,7 +16,9 @@ namespace HoteManagement.Domain
     public partial class cDepartment : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string cDName { get; set; }
         public string Reamrk { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

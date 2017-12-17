@@ -16,9 +16,11 @@ namespace HoteManagement.Domain
     public partial class Shift : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public Nullable<int> user_id { get; set; }
         public Nullable<int> goods_account_id { get; set; }
         public string shfit_name { get; set; }
         public string remark { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

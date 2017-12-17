@@ -18,11 +18,13 @@ namespace HoteManagement.Data.Mapping
        public RepairMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.repair_name).HasMaxLength(50);
           this.Property(t => t.repair_time);
           this.Property(t => t.repair_man).HasMaxLength(50);
           this.Property(t => t.repair_num);
           this.Property(t => t.repair_remark);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

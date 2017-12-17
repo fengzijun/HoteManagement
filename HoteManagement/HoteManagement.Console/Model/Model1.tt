@@ -76,6 +76,9 @@ foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)
     <#=codeStringGenerator.Property(edmProperty)#>
 <#
         }
+		#>
+		<#=  "public virtual Hotel UserHotel { get; set; }" #>
+		<#
     }
 
     if (complexProperties.Any())

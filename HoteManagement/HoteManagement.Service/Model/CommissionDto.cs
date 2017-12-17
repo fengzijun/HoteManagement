@@ -6,16 +6,17 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Service.Model
 {
     
-    
-    public class CommissionDto : BaseDtoEntity
+    public partial class CommissionDto : BaseDtoEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string Accounts { get; set; }
         public string CommDesp { get; set; }
         public Nullable<System.DateTime> CommDate { get; set; }
@@ -25,5 +26,6 @@ namespace HoteManagement.Service.Model
         public Nullable<bool> IsEveryDay { get; set; }
         public Nullable<int> DayComm { get; set; }
         public string CommRemark { get; set; }
-    }
+    		public virtual HotelDto UserHotel { get; set; }
+    		}
 }

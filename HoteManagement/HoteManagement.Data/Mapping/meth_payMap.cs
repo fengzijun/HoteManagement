@@ -23,6 +23,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.meth_is_jie);
           this.Property(t => t.meth_sort);
           this.Property(t => t.remark);
+
        }
     }
 }

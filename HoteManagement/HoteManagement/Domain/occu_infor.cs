@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class occu_infor : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string occ_no { get; set; }
         public string order_id { get; set; }
         public string occ_name { get; set; }
@@ -60,5 +61,6 @@ namespace HoteManagement.Domain
         public string gzRoom { get; set; }
         public string accounts { get; set; }
         public Nullable<int> cpID { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

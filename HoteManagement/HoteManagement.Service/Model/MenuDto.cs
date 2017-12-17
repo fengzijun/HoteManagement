@@ -6,48 +6,23 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Service.Model
 {
     
-    
-    public class MenuDto : BaseDtoEntity
+    public partial class MenuDto : BaseDtoEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string title { get; set; }
         public Nullable<int> parent_id { get; set; }
         public string url { get; set; }
         public string imgurl { get; set; }
         public Nullable<int> sortId { get; set; }
         public Nullable<bool> isable { get; set; }
-    }
-
-    public class Menu
-    {
-
-        public Menu()
-        {
-            ClildMenus = new List<MenuDto>();
-        }
-
-        public MenuDto ParentMenu { get; set; }
-        public List<MenuDto> ClildMenus { get; set; }
-    }
-
-
-    public class UserMenus
-    {
-
-        public UserMenus()
-        {
-            Menus = new List<Menu>();
-        }
-
-        public int UserId { get; set; }
-        public int RoleId { get; set; }
-
-        public List<Menu> Menus { get; set; }
-    }
+    		public virtual HotelDto UserHotel { get; set; }
+    		}
 }

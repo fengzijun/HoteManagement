@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class member : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string Mid { get; set; }
         public string Name { get; set; }
         public Nullable<bool> Sex { get; set; }
@@ -37,5 +38,6 @@ namespace HoteManagement.Domain
         public Nullable<System.DateTime> AddDate { get; set; }
         public string addUser { get; set; }
         public Nullable<System.DateTime> XqTime { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

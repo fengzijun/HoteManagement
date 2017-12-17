@@ -16,11 +16,13 @@ namespace HoteManagement.Domain
     public partial class Menu : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string title { get; set; }
         public Nullable<int> parent_id { get; set; }
         public string url { get; set; }
         public string imgurl { get; set; }
         public Nullable<int> sortId { get; set; }
         public Nullable<bool> isable { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

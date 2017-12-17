@@ -16,7 +16,9 @@ namespace HoteManagement.Domain
     public partial class cCall : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string callName { get; set; }
         public string Remark { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

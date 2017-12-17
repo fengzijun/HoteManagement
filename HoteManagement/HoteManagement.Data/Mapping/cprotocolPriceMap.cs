@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public cprotocolPriceMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.Accounts).HasMaxLength(50);
           this.Property(t => t.RoomType);
           this.Property(t => t.Price);
@@ -28,6 +29,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Breakfast);
           this.Property(t => t.commission);
           this.Property(t => t.cpID);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

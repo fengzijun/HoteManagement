@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public memberTypeMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.TypeName).HasMaxLength(50);
           this.Property(t => t.typePrice);
           this.Property(t => t.Limit);
@@ -44,6 +45,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.StaPrice);
           this.Property(t => t.XqTime);
           this.Property(t => t.machJf);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

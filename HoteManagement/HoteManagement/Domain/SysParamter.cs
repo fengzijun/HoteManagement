@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class SysParamter : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public Nullable<int> CancellMin { get; set; }
         public Nullable<bool> IsDeposit { get; set; }
         public Nullable<decimal> Deposit { get; set; }
@@ -36,5 +37,6 @@ namespace HoteManagement.Domain
         public Nullable<bool> isOcczf { get; set; }
         public Nullable<bool> isCy { get; set; }
         public string MarkSuo { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

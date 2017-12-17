@@ -18,11 +18,13 @@ namespace HoteManagement.Data.Mapping
        public room_type_imageMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.imgid).HasMaxLength(50);
           this.Property(t => t.typeid);
           this.Property(t => t.imgurl).HasMaxLength(200);
           this.Property(t => t.sortId);
           this.Property(t => t.pubdate);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

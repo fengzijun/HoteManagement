@@ -21,5 +21,6 @@ namespace HoteManagement.Domain
         public Nullable<bool> meth_is_jie { get; set; }
         public Nullable<int> meth_sort { get; set; }
         public string remark { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

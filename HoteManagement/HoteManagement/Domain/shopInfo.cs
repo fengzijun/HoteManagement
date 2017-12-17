@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class shopInfo : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string shop_Name { get; set; }
         public string shop_LxMan { get; set; }
         public string Shop_Telphone { get; set; }
@@ -28,5 +29,6 @@ namespace HoteManagement.Domain
         public string Shop_y { get; set; }
         public string Shop_Remaker { get; set; }
         public Nullable<System.DateTime> Shop_date { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

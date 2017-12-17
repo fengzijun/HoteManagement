@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public mtPriceMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.MTID);
           this.Property(t => t.RoomType);
           this.Property(t => t.Price);
@@ -25,6 +26,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.zdPrice);
           this.Property(t => t.lcPrice);
           this.Property(t => t.mothPrice).HasMaxLength(10);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

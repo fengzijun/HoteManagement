@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class Contacts : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string Accounts { get; set; }
         public string cName { get; set; }
         public Nullable<bool> Sex { get; set; }
@@ -33,5 +34,6 @@ namespace HoteManagement.Domain
         public string Likes { get; set; }
         public string Remark { get; set; }
         public Nullable<int> Post { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public SysParamterMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.CancellMin);
           this.Property(t => t.IsDeposit);
           this.Property(t => t.Deposit);
@@ -38,6 +39,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.isOcczf);
           this.Property(t => t.isCy);
           this.Property(t => t.MarkSuo).HasMaxLength(50);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

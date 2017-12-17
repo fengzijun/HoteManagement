@@ -18,8 +18,10 @@ namespace HoteManagement.Data.Mapping
        public RemakerMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.remaker1);
           this.Property(t => t.type);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

@@ -16,11 +16,14 @@ namespace HoteManagement.Domain
     public partial class paymentMoney : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
+        public string orderno { get; set; }
         public Nullable<decimal> pm_Money { get; set; }
         public Nullable<int> pm_MethPayid { get; set; }
         public string pm_Name { get; set; }
         public string pm_roomNumber { get; set; }
         public Nullable<System.DateTime> pm_Date { get; set; }
         public string pm_Remaker { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

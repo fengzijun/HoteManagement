@@ -16,10 +16,12 @@ namespace HoteManagement.Domain
     public partial class Users : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string userid { get; set; }
         public string username { get; set; }
         public string passwords { get; set; }
         public Nullable<int> user_type { get; set; }
         public Nullable<System.DateTime> pubdate { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

@@ -16,6 +16,8 @@ namespace HoteManagement.Domain
     public partial class floor_ld : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string ld_Name { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

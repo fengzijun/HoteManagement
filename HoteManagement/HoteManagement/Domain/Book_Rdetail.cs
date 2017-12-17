@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class Book_Rdetail : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string Book_no { get; set; }
         public int Real_type_Id { get; set; }
         public string Room_number { get; set; }
@@ -25,7 +26,8 @@ namespace HoteManagement.Domain
         public Nullable<int> Real_Scheme_Id { get; set; }
         public Nullable<int> Ok_num { get; set; }
         public Nullable<int> Room_typeid { get; set; }
-    
+    		public virtual Hotel UserHotel { get; set; }
+    		
         public virtual book_room book_room { get; set; }
     }
 }

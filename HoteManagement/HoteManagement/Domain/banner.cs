@@ -16,10 +16,12 @@ namespace HoteManagement.Domain
     public partial class banner : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string banner_id { get; set; }
         public string title { get; set; }
         public string imgurl { get; set; }
         public Nullable<int> sortId { get; set; }
         public Nullable<System.DateTime> pubdate { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

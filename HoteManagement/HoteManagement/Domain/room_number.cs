@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class room_number : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string Rn_flloeld { get; set; }
         public string Rn_floor { get; set; }
         public string Rn_roomNum { get; set; }
@@ -28,5 +29,6 @@ namespace HoteManagement.Domain
         public Nullable<int> Room_sort { get; set; }
         public Nullable<int> Rn_Tobe { get; set; }
         public string Rn_suo { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

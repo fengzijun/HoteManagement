@@ -18,12 +18,14 @@ namespace HoteManagement.Data.Mapping
        public MenuMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.title).HasMaxLength(100);
           this.Property(t => t.parent_id);
           this.Property(t => t.url).HasMaxLength(500);
           this.Property(t => t.imgurl).HasMaxLength(200);
           this.Property(t => t.sortId);
           this.Property(t => t.isable);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

@@ -16,10 +16,12 @@ namespace HoteManagement.Domain
     public partial class Repair : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string repair_name { get; set; }
         public Nullable<System.DateTime> repair_time { get; set; }
         public string repair_man { get; set; }
         public Nullable<int> repair_num { get; set; }
         public string repair_remark { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

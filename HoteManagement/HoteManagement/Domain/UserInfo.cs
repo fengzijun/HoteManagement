@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class UserInfo : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string userID { get; set; }
         public string cardID { get; set; }
         public Nullable<bool> sex { get; set; }
@@ -30,5 +31,6 @@ namespace HoteManagement.Domain
         public string meark { get; set; }
         public Nullable<int> manageID { get; set; }
         public string truename { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

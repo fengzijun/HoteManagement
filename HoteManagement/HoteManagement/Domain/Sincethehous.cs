@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class Sincethehous : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string hs_Numberno { get; set; }
         public string hs_room { get; set; }
         public string hs_yuany { get; set; }
@@ -27,5 +28,6 @@ namespace HoteManagement.Domain
         public string hs_people { get; set; }
         public string hs_Result { get; set; }
         public string hs_remaker { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

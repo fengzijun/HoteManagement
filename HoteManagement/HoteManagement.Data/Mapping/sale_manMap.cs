@@ -18,8 +18,10 @@ namespace HoteManagement.Data.Mapping
        public sale_manMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.sale_man_name).HasMaxLength(50);
           this.Property(t => t.sale_man_money);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

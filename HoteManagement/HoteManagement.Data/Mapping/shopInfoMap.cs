@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public shopInfoMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.shop_Name).HasMaxLength(50);
           this.Property(t => t.shop_LxMan).HasMaxLength(50);
           this.Property(t => t.Shop_Telphone).HasMaxLength(50);
@@ -30,6 +31,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Shop_y).HasMaxLength(50);
           this.Property(t => t.Shop_Remaker);
           this.Property(t => t.Shop_date);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

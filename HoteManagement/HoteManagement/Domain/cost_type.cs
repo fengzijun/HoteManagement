@@ -16,11 +16,13 @@ namespace HoteManagement.Domain
     public partial class cost_type : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string ct_number { get; set; }
         public string ct_name { get; set; }
         public Nullable<int> ct_iftype { get; set; }
         public string ct_remark { get; set; }
         public Nullable<decimal> ct_money { get; set; }
         public Nullable<int> ct_categories { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

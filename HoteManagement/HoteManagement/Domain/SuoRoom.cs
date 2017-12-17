@@ -16,8 +16,10 @@ namespace HoteManagement.Domain
     public partial class SuoRoom : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string SuoType { get; set; }
         public string RoomNumber { get; set; }
         public string SuoMa { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

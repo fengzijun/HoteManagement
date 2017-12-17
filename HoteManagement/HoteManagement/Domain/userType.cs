@@ -16,9 +16,11 @@ namespace HoteManagement.Domain
     public partial class userType : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public Nullable<int> typeid { get; set; }
         public string typename { get; set; }
         public Nullable<decimal> typeprice { get; set; }
         public string remark { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

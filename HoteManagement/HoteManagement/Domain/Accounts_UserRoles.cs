@@ -18,5 +18,6 @@ namespace HoteManagement.Domain
         
         public string UserID { get; set; }
         public int RoleID { get; set; }
-    }
+    	
+    		}
 }

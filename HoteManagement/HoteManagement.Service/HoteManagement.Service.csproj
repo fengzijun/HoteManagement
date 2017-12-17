@@ -84,6 +84,8 @@
     <Compile Include="Core\ApplicationService.cs" />
     <Compile Include="Core\AutoMapperDependencyRegistrar.cs" />
     <Compile Include="Core\BaseDtoEntity.cs" />
+    <Compile Include="Core\GenerateService.cs" />
+    <Compile Include="Core\IGenerateService.cs" />
     <Compile Include="Events\EventPublisher.cs" />
     <Compile Include="Events\EventPublisherExtensions.cs" />
     <Compile Include="Events\IConsumer.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="Model\BookStateDto.cs" />
     <Compile Include="Model\Book_RdetailDto.cs" />
     <Compile Include="Model\book_roomDto.cs" />
+    <Compile Include="Model\breakfirstcouponDto.cs" />
     <Compile Include="Model\card_typeDto.cs" />
     <Compile Include="Model\cCallDto.cs" />
     <Compile Include="Model\cDepartmentDto.cs" />
@@ -114,6 +117,7 @@
     <Compile Include="Model\cprotocolDto.cs" />
     <Compile Include="Model\cprotocolPriceDto.cs" />
     <Compile Include="Model\cpTypeDto.cs" />
+    <Compile Include="Model\creditDto.cs" />
     <Compile Include="Model\csysTypeDto.cs" />
     <Compile Include="Model\customerDto.cs" />
     <Compile Include="Model\customerStateDto.cs" />
@@ -126,9 +130,11 @@
     <Compile Include="Model\GoodsDto.cs" />
     <Compile Include="Model\goods_accountDto.cs" />
     <Compile Include="Model\guest_sourceDto.cs" />
+    <Compile Include="Model\HotelDto.cs" />
     <Compile Include="Model\hourse_schemeDto.cs" />
     <Compile Include="Model\hour_roomDto.cs" />
     <Compile Include="Model\infoDto.cs" />
+    <Compile Include="Model\logDto.cs" />
     <Compile Include="Model\memberDto.cs" />
     <Compile Include="Model\memberStateDto.cs" />
     <Compile Include="Model\memberTypeDto.cs" />
@@ -139,15 +145,20 @@
     <Compile Include="Model\mtPriceDto.cs" />
     <Compile Include="Model\occu_inforDto.cs" />
     <Compile Include="Model\occu_informxDto.cs" />
+    <Compile Include="Model\order_extDto.cs" />
     <Compile Include="Model\order_inforDto.cs" />
     <Compile Include="Model\paymentMoneyDto.cs" />
     <Compile Include="Model\price_typeDto.cs" />
     <Compile Include="Model\printDto.cs" />
     <Compile Include="Model\real_modeDto.cs" />
     <Compile Include="Model\real_stateDto.cs" />
+    <Compile Include="Model\receiptDto.cs" />
     <Compile Include="Model\RemakerDto.cs" />
     <Compile Include="Model\RepairDto.cs" />
     <Compile Include="Model\RoleMenuDto.cs" />
+    <Compile Include="Model\roomcouponDto.cs" />
+    <Compile Include="Model\roommanDto.cs" />
+    <Compile Include="Model\roomrentDto.cs" />
     <Compile Include="Model\room_featureDto.cs" />
     <Compile Include="Model\room_numberDto.cs" />
     <Compile Include="Model\room_stateDto.cs" />

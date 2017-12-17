@@ -6,14 +6,14 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Service.Model
 {
     
-    
-    public class meth_payDto : BaseDtoEntity
+    public partial class meth_payDto : BaseDtoEntity
     {
         
         public string meth_pay_name { get; set; }
@@ -21,5 +21,6 @@ namespace HoteManagement.Service.Model
         public Nullable<bool> meth_is_jie { get; set; }
         public Nullable<int> meth_sort { get; set; }
         public string remark { get; set; }
-    }
+    		public virtual HotelDto UserHotel { get; set; }
+    		}
 }

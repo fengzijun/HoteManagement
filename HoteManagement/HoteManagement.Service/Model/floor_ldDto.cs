@@ -6,16 +6,18 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Service.Model
 {
     
-    
-    public class floor_ldDto : BaseDtoEntity
+    public partial class floor_ldDto : BaseDtoEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string ld_Name { get; set; }
-    }
+    		public virtual HotelDto UserHotel { get; set; }
+    		}
 }

@@ -50,6 +50,7 @@ foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)
 
 
 #>
+      this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
    }
 }
 <#
@@ -229,7 +230,7 @@ public class CodeStringGenerator
 	   if(edmProperty.TypeName!="String")
        {
 	   
-		   if(edmProperty.Name == "Id")
+		   if(edmProperty.Name.ToLower() == "id")
             {
 			   return "  this.HasKey(t => t.Id);";
             }
@@ -239,7 +240,10 @@ public class CodeStringGenerator
        }
 	   else
        {
-	       return "  this.Property(t => t."+edmProperty.Name+").HasMaxLength("+edmProperty.MaxLength.ToString()+");";
+	       if(edmProperty.MaxLength.HasValue)
+	           return "  this.Property(t => t."+edmProperty.Name+").HasMaxLength("+edmProperty.MaxLength.ToString()+");";
+		   else
+		       return "  this.Property(t => t."+edmProperty.Name+");";
 	      
        }
     }
@@ -249,7 +253,7 @@ public class CodeStringGenerator
 	  
 		
 	    string name =  _code.Escape(edmProperty);
-		if(name == "Id" || name == "createtime" || name == "updatetime")
+		if(name.ToLower() == "id")
 		     return string.Empty;
         return string.Format(
             CultureInfo.InvariantCulture,

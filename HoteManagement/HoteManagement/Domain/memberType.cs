@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class memberType : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string TypeName { get; set; }
         public Nullable<int> typePrice { get; set; }
         public Nullable<bool> Limit { get; set; }
@@ -42,5 +43,6 @@ namespace HoteManagement.Domain
         public Nullable<int> StaPrice { get; set; }
         public Nullable<System.DateTime> XqTime { get; set; }
         public Nullable<int> machJf { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

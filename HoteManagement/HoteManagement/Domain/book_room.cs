@@ -22,6 +22,7 @@ namespace HoteManagement.Domain
         }
     
         
+        public Nullable<int> hotelid { get; set; }
         public string book_no { get; set; }
         public string book_Name { get; set; }
         public string tele_no { get; set; }
@@ -45,7 +46,8 @@ namespace HoteManagement.Domain
         public string userid { get; set; }
         public string Accounts { get; set; }
         public Nullable<int> CpID { get; set; }
-    
+    		public virtual Hotel UserHotel { get; set; }
+    		
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Book_Rdetail> Book_Rdetail { get; set; }
     }

@@ -16,10 +16,12 @@ namespace HoteManagement.Domain
     public partial class ZD_hourse : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public Nullable<System.TimeSpan> latest { get; set; }
         public Nullable<int> Buffer { get; set; }
         public Nullable<int> tixing { get; set; }
         public Nullable<System.TimeSpan> beigin { get; set; }
         public Nullable<System.TimeSpan> endtime { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

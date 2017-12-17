@@ -18,11 +18,13 @@ namespace HoteManagement.Data.Mapping
        public ZD_hourseMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.latest);
           this.Property(t => t.Buffer);
           this.Property(t => t.tixing);
           this.Property(t => t.beigin);
           this.Property(t => t.endtime);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

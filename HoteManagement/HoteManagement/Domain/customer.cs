@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class customer : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string accounts { get; set; }
         public string cName { get; set; }
         public Nullable<int> sysType { get; set; }
@@ -54,5 +55,6 @@ namespace HoteManagement.Domain
         public Nullable<int> xqBook { get; set; }
         public Nullable<int> Pming { get; set; }
         public Nullable<bool> isXz { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

@@ -16,7 +16,9 @@ namespace HoteManagement.Domain
     public partial class Remaker : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string remaker1 { get; set; }
         public Nullable<int> type { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

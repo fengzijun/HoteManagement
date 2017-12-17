@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public Shift_ExcMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.UserId);
           this.Property(t => t.Good_Account_Id);
           this.Property(t => t.meth_pay_id);
@@ -36,6 +37,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.ga_sum_price);
           this.Property(t => t.Remark);
           this.Property(t => t.ga_roomNumber).HasMaxLength(50);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public FtSetMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.Lwidth);
           this.Property(t => t.Lhieght);
           this.Property(t => t.Lfontf).HasMaxLength(50);
@@ -79,6 +80,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.zdSize);
           this.Property(t => t.zdColor).HasMaxLength(10);
           this.Property(t => t.icoColor);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

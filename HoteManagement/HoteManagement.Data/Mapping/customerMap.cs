@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public customerMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.accounts).HasMaxLength(50);
           this.Property(t => t.cName).HasMaxLength(50);
           this.Property(t => t.sysType);
@@ -56,6 +57,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.xqBook);
           this.Property(t => t.Pming);
           this.Property(t => t.isXz);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

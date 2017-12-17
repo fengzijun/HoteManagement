@@ -18,8 +18,10 @@ namespace HoteManagement.Data.Mapping
        public card_typeMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.ct_name).HasMaxLength(20);
           this.Property(t => t.remark);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

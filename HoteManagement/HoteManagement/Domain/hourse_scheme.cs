@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class hourse_scheme : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public Nullable<int> hs_room { get; set; }
         public string hs_name { get; set; }
         public Nullable<decimal> hs_psmoney { get; set; }
@@ -28,5 +29,6 @@ namespace HoteManagement.Domain
         public Nullable<System.DateTime> Hs_End { get; set; }
         public Nullable<decimal> Hs_zdr { get; set; }
         public string Hs_Reamrk { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

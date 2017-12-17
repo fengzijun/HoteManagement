@@ -17,7 +17,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web;
-
 using AutoMapper;
 using HoteManagement.Service.Model;
 
@@ -38,7 +37,7 @@ namespace HoteManagement.Service.Core
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<Domain.account_goods, account_goodsDto>();
+                cfg.CreateMap<Domain.account_goods,  account_goodsDto>();
                 cfg.CreateMap<account_goodsDto, Domain.account_goods>();
 
                 cfg.CreateMap<Domain.Accounts_Roles, Accounts_RolesDto>();
@@ -67,6 +66,9 @@ namespace HoteManagement.Service.Core
 
                 cfg.CreateMap<Domain.BookState, BookStateDto>();
                 cfg.CreateMap<BookStateDto, Domain.BookState>();
+
+                cfg.CreateMap<Domain.breakfirstcoupon, breakfirstcouponDto>();
+                cfg.CreateMap<breakfirstcouponDto, Domain.breakfirstcoupon>();
 
                 cfg.CreateMap<Domain.card_type, card_typeDto>();
                 cfg.CreateMap<card_typeDto, Domain.card_type>();
@@ -104,6 +106,9 @@ namespace HoteManagement.Service.Core
                 cfg.CreateMap<Domain.cpType, cpTypeDto>();
                 cfg.CreateMap<cpTypeDto, Domain.cpType>();
 
+                cfg.CreateMap<Domain.credit, creditDto>();
+                cfg.CreateMap<creditDto, Domain.credit>();
+
                 cfg.CreateMap<Domain.csysType, csysTypeDto>();
                 cfg.CreateMap<csysTypeDto, Domain.csysType>();
 
@@ -140,6 +145,9 @@ namespace HoteManagement.Service.Core
                 cfg.CreateMap<Domain.guest_source, guest_sourceDto>();
                 cfg.CreateMap<guest_sourceDto, Domain.guest_source>();
 
+                cfg.CreateMap<Domain.Hotel, HotelDto>();
+                cfg.CreateMap<HotelDto, Domain.Hotel>();
+
                 cfg.CreateMap<Domain.hour_room, hour_roomDto>();
                 cfg.CreateMap<hour_roomDto, Domain.hour_room>();
 
@@ -148,6 +156,9 @@ namespace HoteManagement.Service.Core
 
                 cfg.CreateMap<Domain.info, infoDto>();
                 cfg.CreateMap<infoDto, Domain.info>();
+
+                cfg.CreateMap<Domain.log, logDto>();
+                cfg.CreateMap<logDto, Domain.log>();
 
                 cfg.CreateMap<Domain.member, memberDto>();
                 cfg.CreateMap<memberDto, Domain.member>();
@@ -179,6 +190,9 @@ namespace HoteManagement.Service.Core
                 cfg.CreateMap<Domain.occu_informx, occu_informxDto>();
                 cfg.CreateMap<occu_informxDto, Domain.occu_informx>();
 
+                cfg.CreateMap<Domain.order_ext, order_extDto>();
+                cfg.CreateMap<order_extDto, Domain.order_ext>();
+
                 cfg.CreateMap<Domain.order_infor, order_inforDto>();
                 cfg.CreateMap<order_inforDto, Domain.order_infor>();
 
@@ -196,6 +210,9 @@ namespace HoteManagement.Service.Core
 
                 cfg.CreateMap<Domain.real_state, real_stateDto>();
                 cfg.CreateMap<real_stateDto, Domain.real_state>();
+
+                cfg.CreateMap<Domain.receipt, receiptDto>();
+                cfg.CreateMap<receiptDto, Domain.receipt>();
 
                 cfg.CreateMap<Domain.Remaker, RemakerDto>();
                 cfg.CreateMap<RemakerDto, Domain.Remaker>();
@@ -220,6 +237,15 @@ namespace HoteManagement.Service.Core
 
                 cfg.CreateMap<Domain.room_type_image, room_type_imageDto>();
                 cfg.CreateMap<room_type_imageDto, Domain.room_type_image>();
+
+                cfg.CreateMap<Domain.roomcoupon, roomcouponDto>();
+                cfg.CreateMap<roomcouponDto, Domain.roomcoupon>();
+
+                cfg.CreateMap<Domain.roomman, roommanDto>();
+                cfg.CreateMap<roommanDto, Domain.roomman>();
+
+                cfg.CreateMap<Domain.roomrent, roomrentDto>();
+                cfg.CreateMap<roomrentDto, Domain.roomrent>();
 
                 cfg.CreateMap<Domain.sale_man, sale_manDto>();
                 cfg.CreateMap<sale_manDto, Domain.sale_man>();
@@ -259,6 +285,7 @@ namespace HoteManagement.Service.Core
 
                 cfg.CreateMap<Domain.ZD_hourse, ZD_hourseDto>();
                 cfg.CreateMap<ZD_hourseDto, Domain.ZD_hourse>();
+
             });
         }
 

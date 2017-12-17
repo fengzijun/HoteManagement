@@ -16,8 +16,10 @@ namespace HoteManagement.Domain
     public partial class SuoSys : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string SuoTypeName { get; set; }
         public Nullable<bool> IsComm { get; set; }
         public Nullable<bool> IsBackSuo { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

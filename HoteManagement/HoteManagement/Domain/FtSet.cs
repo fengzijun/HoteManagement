@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class FtSet : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public int Lwidth { get; set; }
         public int Lhieght { get; set; }
         public string Lfontf { get; set; }
@@ -77,5 +78,6 @@ namespace HoteManagement.Domain
         public Nullable<int> zdSize { get; set; }
         public string zdColor { get; set; }
         public Nullable<int> icoColor { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

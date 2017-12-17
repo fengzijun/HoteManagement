@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public Book_RdetailMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.Book_no).HasMaxLength(20);
           this.Property(t => t.Real_type_Id);
           this.Property(t => t.Room_number).HasMaxLength(20);
@@ -27,6 +28,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Real_Scheme_Id);
           this.Property(t => t.Ok_num);
           this.Property(t => t.Room_typeid);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

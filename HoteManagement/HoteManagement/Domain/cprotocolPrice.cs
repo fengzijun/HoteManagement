@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class cprotocolPrice : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string Accounts { get; set; }
         public Nullable<int> RoomType { get; set; }
         public Nullable<int> Price { get; set; }
@@ -26,5 +27,6 @@ namespace HoteManagement.Domain
         public Nullable<int> Breakfast { get; set; }
         public Nullable<int> commission { get; set; }
         public Nullable<int> cpID { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

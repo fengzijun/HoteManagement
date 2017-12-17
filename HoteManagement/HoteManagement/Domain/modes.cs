@@ -16,8 +16,10 @@ namespace HoteManagement.Domain
     public partial class modes : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string moshi_name { get; set; }
         public string Reanker { get; set; }
         public Nullable<int> sort { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

@@ -18,11 +18,13 @@ namespace HoteManagement.Data.Mapping
        public AddPriceMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.AddPice);
           this.Property(t => t.ZsPice);
           this.Property(t => t.ZsJf);
           this.Property(t => t.IsOk);
           this.Property(t => t.Remark).HasMaxLength(50);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

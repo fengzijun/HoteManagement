@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class account_goods : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string ga_name { get; set; }
         public string ga_Account { get; set; }
         public string ga_number { get; set; }
@@ -34,5 +35,6 @@ namespace HoteManagement.Domain
         public Nullable<int> ga_isjz { get; set; }
         public string ga_goodNo { get; set; }
         public Nullable<int> ga_isys { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

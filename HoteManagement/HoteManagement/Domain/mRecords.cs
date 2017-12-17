@@ -16,9 +16,11 @@ namespace HoteManagement.Domain
     public partial class mRecords : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string mmid { get; set; }
         public Nullable<int> Price { get; set; }
         public Nullable<int> Type { get; set; }
         public string Remark { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

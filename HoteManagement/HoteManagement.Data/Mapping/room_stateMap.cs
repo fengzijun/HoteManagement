@@ -18,10 +18,12 @@ namespace HoteManagement.Data.Mapping
        public room_stateMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.room_state_name).HasMaxLength(50);
           this.Property(t => t.Room_suod).HasMaxLength(10);
           this.Property(t => t.remark);
           this.Property(t => t.Room_color).HasMaxLength(50);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

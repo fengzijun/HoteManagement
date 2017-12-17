@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public CommissionMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.Accounts).HasMaxLength(50);
           this.Property(t => t.CommDesp).HasMaxLength(50);
           this.Property(t => t.CommDate);
@@ -27,6 +28,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.IsEveryDay);
           this.Property(t => t.DayComm);
           this.Property(t => t.CommRemark).HasMaxLength(50);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

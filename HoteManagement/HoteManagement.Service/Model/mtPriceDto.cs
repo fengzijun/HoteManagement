@@ -6,16 +6,17 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Service.Model
 {
     
-    
-    public class mtPriceDto : BaseDtoEntity
+    public partial class mtPriceDto : BaseDtoEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public Nullable<int> MTID { get; set; }
         public Nullable<int> RoomType { get; set; }
         public Nullable<int> Price { get; set; }
@@ -23,5 +24,6 @@ namespace HoteManagement.Service.Model
         public Nullable<double> zdPrice { get; set; }
         public Nullable<int> lcPrice { get; set; }
         public string mothPrice { get; set; }
-    }
+    		public virtual HotelDto UserHotel { get; set; }
+    		}
 }

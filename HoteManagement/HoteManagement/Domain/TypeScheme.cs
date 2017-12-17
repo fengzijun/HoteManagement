@@ -16,10 +16,12 @@ namespace HoteManagement.Domain
     public partial class TypeScheme : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public Nullable<int> Earlyapart { get; set; }
         public Nullable<int> EarlyapartAddP { get; set; }
         public Nullable<int> EarlyInsufficient { get; set; }
         public Nullable<int> EarlyInExceed { get; set; }
         public Nullable<decimal> EarlyInAddPri { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

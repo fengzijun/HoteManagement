@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public SincethehousMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.hs_Numberno).HasMaxLength(50);
           this.Property(t => t.hs_room).HasMaxLength(50);
           this.Property(t => t.hs_yuany);
@@ -29,6 +30,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.hs_people).HasMaxLength(50);
           this.Property(t => t.hs_Result);
           this.Property(t => t.hs_remaker);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

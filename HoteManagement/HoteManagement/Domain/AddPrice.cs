@@ -16,10 +16,12 @@ namespace HoteManagement.Domain
     public partial class AddPrice : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public Nullable<int> AddPice { get; set; }
         public Nullable<int> ZsPice { get; set; }
         public Nullable<int> ZsJf { get; set; }
         public Nullable<bool> IsOk { get; set; }
         public string Remark { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

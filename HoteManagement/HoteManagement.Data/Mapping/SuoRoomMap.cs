@@ -18,9 +18,11 @@ namespace HoteManagement.Data.Mapping
        public SuoRoomMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.SuoType).HasMaxLength(50);
           this.Property(t => t.RoomNumber).HasMaxLength(50);
           this.Property(t => t.SuoMa).HasMaxLength(50);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

@@ -18,12 +18,14 @@ namespace HoteManagement.Data.Mapping
        public cost_typeMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.ct_number).HasMaxLength(50);
           this.Property(t => t.ct_name).HasMaxLength(50);
           this.Property(t => t.ct_iftype);
           this.Property(t => t.ct_remark);
           this.Property(t => t.ct_money);
           this.Property(t => t.ct_categories);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

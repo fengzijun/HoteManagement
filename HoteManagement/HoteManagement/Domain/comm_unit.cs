@@ -16,7 +16,9 @@ namespace HoteManagement.Domain
     public partial class comm_unit : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string unit_name { get; set; }
         public string remark { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

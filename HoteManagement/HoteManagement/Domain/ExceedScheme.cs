@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class ExceedScheme : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public int TypeRoom { get; set; }
         public Nullable<int> GraceTime { get; set; }
         public Nullable<int> Earlyapart { get; set; }
@@ -23,5 +24,6 @@ namespace HoteManagement.Domain
         public Nullable<int> EarlyInsufficient { get; set; }
         public Nullable<int> EarlyInExceed { get; set; }
         public Nullable<decimal> EarlyInAddPri { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

@@ -18,12 +18,14 @@ namespace HoteManagement.Data.Mapping
        public EntryMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.entry_name).HasMaxLength(50);
           this.Property(t => t.entry_num);
           this.Property(t => t.entry_time);
           this.Property(t => t.entry_unit).HasMaxLength(50);
           this.Property(t => t.entry_price);
           this.Property(t => t.entry_room).HasMaxLength(50);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

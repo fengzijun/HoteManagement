@@ -20,6 +20,7 @@ namespace HoteManagement.Data.Mapping
           this.HasKey(t => t.Id);
           this.Property(t => t.UserID).HasMaxLength(50);
           this.Property(t => t.RoleID);
+
        }
     }
 }

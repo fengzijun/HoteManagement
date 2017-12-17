@@ -16,7 +16,9 @@ namespace HoteManagement.Domain
     public partial class sale_man : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string sale_man_name { get; set; }
         public Nullable<decimal> sale_man_money { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

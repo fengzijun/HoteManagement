@@ -18,11 +18,13 @@ namespace HoteManagement.Data.Mapping
        public TypeSchemeMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.Earlyapart);
           this.Property(t => t.EarlyapartAddP);
           this.Property(t => t.EarlyInsufficient);
           this.Property(t => t.EarlyInExceed);
           this.Property(t => t.EarlyInAddPri);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

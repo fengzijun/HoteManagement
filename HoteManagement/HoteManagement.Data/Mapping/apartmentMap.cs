@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public apartmentMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.occ_no).HasMaxLength(50);
           this.Property(t => t.order_id).HasMaxLength(50);
           this.Property(t => t.occ_name).HasMaxLength(20);
@@ -57,6 +58,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.tuifaId);
           this.Property(t => t.userid).HasMaxLength(50);
           this.Property(t => t.header_img).HasMaxLength(50);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

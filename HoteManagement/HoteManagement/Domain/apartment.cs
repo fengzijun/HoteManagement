@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class apartment : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string occ_no { get; set; }
         public string order_id { get; set; }
         public string occ_name { get; set; }
@@ -55,5 +56,6 @@ namespace HoteManagement.Domain
         public Nullable<int> tuifaId { get; set; }
         public string userid { get; set; }
         public string header_img { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

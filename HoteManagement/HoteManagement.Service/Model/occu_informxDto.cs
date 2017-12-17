@@ -6,16 +6,17 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Service.Model
 {
     
-    
-    public class occu_informxDto : BaseDtoEntity
+    public partial class occu_informxDto : BaseDtoEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string occ_no { get; set; }
         public Nullable<int> order_id { get; set; }
         public string occ_name { get; set; }
@@ -45,5 +46,6 @@ namespace HoteManagement.Service.Model
         public string lordRoomid { get; set; }
         public Nullable<int> continuelive { get; set; }
         public string phonenum { get; set; }
-    }
+    		public virtual HotelDto UserHotel { get; set; }
+    		}
 }

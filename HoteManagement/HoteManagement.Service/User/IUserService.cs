@@ -27,7 +27,7 @@ namespace HoteManagement.Service.User
         Accounts_UsersDto GetAccountUser(int id);
 
 
-        UserMenus GetAccountMenus(int userid);
+        //UserMenus GetAccountMenus(int userid);
 
 
 

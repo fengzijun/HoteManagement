@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class Goods : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string Goods_number { get; set; }
         public string Goods_name { get; set; }
         public Nullable<decimal> Goods_price { get; set; }
@@ -26,5 +27,6 @@ namespace HoteManagement.Domain
         public Nullable<int> Goods_categories { get; set; }
         public string Goods_Remaker { get; set; }
         public Nullable<int> Goods_jf { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

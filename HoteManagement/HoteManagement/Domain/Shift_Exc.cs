@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class Shift_Exc : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public Nullable<int> UserId { get; set; }
         public Nullable<int> Good_Account_Id { get; set; }
         public Nullable<int> meth_pay_id { get; set; }
@@ -34,5 +35,6 @@ namespace HoteManagement.Domain
         public Nullable<decimal> ga_sum_price { get; set; }
         public string Remark { get; set; }
         public string ga_roomNumber { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class room_type : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string room_number { get; set; }
         public string room_name { get; set; }
         public string room_hour { get; set; }
@@ -27,5 +28,6 @@ namespace HoteManagement.Domain
         public Nullable<decimal> room_ealry_price { get; set; }
         public Nullable<decimal> room_Moth_price { get; set; }
         public Nullable<int> room_Bfb { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

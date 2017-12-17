@@ -6,17 +6,19 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Service.Model
 {
     
-    
-    public class real_modeDto : BaseDtoEntity
+    public partial class real_modeDto : BaseDtoEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string real_mode_name { get; set; }
         public string remark { get; set; }
-    }
+    		public virtual HotelDto UserHotel { get; set; }
+    		}
 }

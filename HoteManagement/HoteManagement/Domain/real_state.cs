@@ -16,10 +16,12 @@ namespace HoteManagement.Domain
     public partial class real_state : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string tr_number { get; set; }
         public string tr_name { get; set; }
         public string tr_remaker { get; set; }
         public string back1 { get; set; }
         public string back2 { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

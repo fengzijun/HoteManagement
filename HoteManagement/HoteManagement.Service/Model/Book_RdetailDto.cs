@@ -6,16 +6,17 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Service.Model
 {
     
-    
-    public class Book_RdetailDto : BaseDtoEntity
+    public partial class Book_RdetailDto : BaseDtoEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string Book_no { get; set; }
         public int Real_type_Id { get; set; }
         public string Room_number { get; set; }
@@ -25,7 +26,8 @@ namespace HoteManagement.Service.Model
         public Nullable<int> Real_Scheme_Id { get; set; }
         public Nullable<int> Ok_num { get; set; }
         public Nullable<int> Room_typeid { get; set; }
-    
-        //public virtual book_room book_room { get; set; }
+    		public virtual HotelDto UserHotel { get; set; }
+    		
+
     }
 }

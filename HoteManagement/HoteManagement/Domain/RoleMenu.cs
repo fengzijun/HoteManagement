@@ -16,8 +16,10 @@ namespace HoteManagement.Domain
     public partial class RoleMenu : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public Nullable<int> RoleID { get; set; }
         public Nullable<int> Menu_id { get; set; }
         public Nullable<int> Menu_pid { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

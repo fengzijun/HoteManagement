@@ -16,9 +16,11 @@ namespace HoteManagement.Domain
     public partial class room_state : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string room_state_name { get; set; }
         public string Room_suod { get; set; }
         public string remark { get; set; }
         public string Room_color { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

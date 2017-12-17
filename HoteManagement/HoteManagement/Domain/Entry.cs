@@ -16,11 +16,13 @@ namespace HoteManagement.Domain
     public partial class Entry : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string entry_name { get; set; }
         public Nullable<int> entry_num { get; set; }
         public Nullable<System.DateTime> entry_time { get; set; }
         public string entry_unit { get; set; }
         public Nullable<decimal> entry_price { get; set; }
         public string entry_room { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

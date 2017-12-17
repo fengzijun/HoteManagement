@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class mtPrice : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public Nullable<int> MTID { get; set; }
         public Nullable<int> RoomType { get; set; }
         public Nullable<int> Price { get; set; }
@@ -23,5 +24,6 @@ namespace HoteManagement.Domain
         public Nullable<double> zdPrice { get; set; }
         public Nullable<int> lcPrice { get; set; }
         public string mothPrice { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

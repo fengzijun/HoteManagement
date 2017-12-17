@@ -6,18 +6,20 @@
 //     如果重新生成代码，将覆盖对此文件的手动更改。
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 using System;
 using System.Collections.Generic;
 
 namespace HoteManagement.Service.Model
 {
     
-    
-    public class modesDto : BaseDtoEntity
+    public partial class modesDto : BaseDtoEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string moshi_name { get; set; }
         public string Reanker { get; set; }
         public Nullable<int> sort { get; set; }
-    }
+    		public virtual HotelDto UserHotel { get; set; }
+    		}
 }

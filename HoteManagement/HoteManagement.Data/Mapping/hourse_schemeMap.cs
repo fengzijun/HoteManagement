@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public hourse_schemeMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.hs_room);
           this.Property(t => t.hs_name).HasMaxLength(50);
           this.Property(t => t.hs_psmoney);
@@ -30,6 +31,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Hs_End);
           this.Property(t => t.Hs_zdr);
           this.Property(t => t.Hs_Reamrk).HasMaxLength(500);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

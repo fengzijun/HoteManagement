@@ -16,7 +16,9 @@ namespace HoteManagement.Domain
     public partial class customerType : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string ctName { get; set; }
         public string Reamrk { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

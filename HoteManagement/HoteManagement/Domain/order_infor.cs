@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class order_infor : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string order_no { get; set; }
         public string room_id { get; set; }
         public Nullable<int> occ_id { get; set; }
@@ -24,5 +25,6 @@ namespace HoteManagement.Domain
         public string order_state { get; set; }
         public Nullable<System.DateTime> order_time { get; set; }
         public string remark { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class Accounts_Users : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string UserID { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -28,5 +29,6 @@ namespace HoteManagement.Domain
         public Nullable<bool> Activity { get; set; }
         public string UserType { get; set; }
         public Nullable<int> Style { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

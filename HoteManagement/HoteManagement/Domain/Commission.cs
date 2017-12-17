@@ -16,6 +16,7 @@ namespace HoteManagement.Domain
     public partial class Commission : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string Accounts { get; set; }
         public string CommDesp { get; set; }
         public Nullable<System.DateTime> CommDate { get; set; }
@@ -25,5 +26,6 @@ namespace HoteManagement.Domain
         public Nullable<bool> IsEveryDay { get; set; }
         public Nullable<int> DayComm { get; set; }
         public string CommRemark { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

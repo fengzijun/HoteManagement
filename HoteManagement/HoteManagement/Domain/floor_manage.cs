@@ -16,10 +16,12 @@ namespace HoteManagement.Domain
     public partial class floor_manage : BaseEntity
     {
         
+        public Nullable<int> hotelid { get; set; }
         public string floor_number { get; set; }
         public string floor_name { get; set; }
         public string floor_sorting { get; set; }
         public string floor_remaker { get; set; }
         public string floor_shoping { get; set; }
-    }
+    		public virtual Hotel UserHotel { get; set; }
+    		}
 }

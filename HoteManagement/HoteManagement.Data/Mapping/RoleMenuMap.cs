@@ -18,9 +18,11 @@ namespace HoteManagement.Data.Mapping
        public RoleMenuMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.RoleID);
           this.Property(t => t.Menu_id);
           this.Property(t => t.Menu_pid);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

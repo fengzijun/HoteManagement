@@ -18,11 +18,13 @@ namespace HoteManagement.Data.Mapping
        public real_stateMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.tr_number).HasMaxLength(20);
           this.Property(t => t.tr_name).HasMaxLength(50);
           this.Property(t => t.tr_remaker);
           this.Property(t => t.back1).HasMaxLength(50);
           this.Property(t => t.back2).HasMaxLength(50);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

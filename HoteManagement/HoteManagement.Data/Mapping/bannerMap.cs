@@ -18,11 +18,13 @@ namespace HoteManagement.Data.Mapping
        public bannerMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.banner_id).HasMaxLength(50);
           this.Property(t => t.title).HasMaxLength(100);
           this.Property(t => t.imgurl).HasMaxLength(200);
           this.Property(t => t.sortId);
           this.Property(t => t.pubdate);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

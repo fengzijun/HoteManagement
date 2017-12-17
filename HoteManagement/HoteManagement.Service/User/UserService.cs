@@ -17,227 +17,246 @@ namespace HoteManagement.Service.User
     public class UserService : ApplicationService, IUserService
     {
         public UserService(IRepository<Domain.account_goods> account_goodsRepository,
-                IRepository<Domain.Accounts_Roles> accounts_rolesRepository,
-                IRepository<Domain.Accounts_UserRoles> accounts_userrolesRepository,
-                IRepository<Domain.Accounts_Users> accounts_usersRepository,
-                IRepository<Domain.AddPrice> addpriceRepository,
-                IRepository<Domain.apartment> apartmentRepository,
-                IRepository<Domain.banner> bannerRepository,
-                IRepository<Domain.Book_Rdetail> book_rdetailRepository,
-                IRepository<Domain.book_room> book_roomRepository,
-                IRepository<Domain.BookState> bookstateRepository,
-                IRepository<Domain.card_type> card_typeRepository,
-                IRepository<Domain.cCall> ccallRepository,
-                IRepository<Domain.cDepartment> cdepartmentRepository,
-                IRepository<Domain.cIndustry> cindustryRepository,
-                IRepository<Domain.comm_unit> comm_unitRepository,
-                IRepository<Domain.Commission> commissionRepository,
-                IRepository<Domain.Contacts> contactsRepository,
-                IRepository<Domain.cost_type> cost_typeRepository,
-                IRepository<Domain.cPost> cpostRepository,
-                IRepository<Domain.cprotocol> cprotocolRepository,
-                IRepository<Domain.cprotocolPrice> cprotocolpriceRepository,
-                IRepository<Domain.cpType> cptypeRepository,
-                IRepository<Domain.csysType> csystypeRepository,
-                IRepository<Domain.customer> customerRepository,
-                IRepository<Domain.customerState> customerstateRepository,
-                IRepository<Domain.customerType> customertypeRepository,
-                IRepository<Domain.Entry> entryRepository,
-                IRepository<Domain.ExceedScheme> exceedschemeRepository,
-                IRepository<Domain.floor_ld> floor_ldRepository,
-                IRepository<Domain.floor_manage> floor_manageRepository,
-                IRepository<Domain.FtSet> ftsetRepository,
-                IRepository<Domain.Goods> goodsRepository,
-                IRepository<Domain.goods_account> goods_accountRepository,
-                IRepository<Domain.guest_source> guest_sourceRepository,
-                IRepository<Domain.hour_room> hour_roomRepository,
-                IRepository<Domain.hourse_scheme> hourse_schemeRepository,
-                IRepository<Domain.info> infoRepository,
-                IRepository<Domain.member> memberRepository,
-                IRepository<Domain.memberState> memberstateRepository,
-                IRepository<Domain.memberType> membertypeRepository,
-                IRepository<Domain.Menu> menuRepository,
-                IRepository<Domain.meth_pay> meth_payRepository,
-                IRepository<Domain.modes> modesRepository,
-                IRepository<Domain.mRecords> mrecordsRepository,
-                IRepository<Domain.mtPrice> mtpriceRepository,
-                IRepository<Domain.occu_infor> occu_inforRepository,
-                IRepository<Domain.occu_informx> occu_informxRepository,
-                IRepository<Domain.order_infor> order_inforRepository,
-                IRepository<Domain.paymentMoney> paymentmoneyRepository,
-                IRepository<Domain.price_type> price_typeRepository,
-                IRepository<Domain.print> printRepository,
-                IRepository<Domain.real_mode> real_modeRepository,
-                IRepository<Domain.real_state> real_stateRepository,
-                IRepository<Domain.Remaker> remakerRepository,
-                IRepository<Domain.Repair> repairRepository,
-                IRepository<Domain.RoleMenu> rolemenuRepository,
-                IRepository<Domain.room_feature> room_featureRepository,
-                IRepository<Domain.room_number> room_numberRepository,
-                IRepository<Domain.room_state> room_stateRepository,
-                IRepository<Domain.room_type> room_typeRepository,
-                IRepository<Domain.room_type_image> room_type_imageRepository,
-                IRepository<Domain.sale_man> sale_manRepository,
-                IRepository<Domain.Shift> shiftRepository,
-                IRepository<Domain.Shift_Exc> shift_excRepository,
-                IRepository<Domain.shopInfo> shopinfoRepository,
-                IRepository<Domain.Sincethehous> sincethehousRepository,
-                IRepository<Domain.SuoRoom> suoroomRepository,
-                IRepository<Domain.SuoSys> suosysRepository,
-                IRepository<Domain.SysParamter> sysparamterRepository,
-                IRepository<Domain.TypeScheme> typeschemeRepository,
-                IRepository<Domain.UserInfo> userinfoRepository,
-                IRepository<Domain.Users> usersRepository,
-                IRepository<Domain.userType> usertypeRepository,
-                IRepository<Domain.ZD_hourse> zd_hourseRepository,
-                IDbContext dbcontext,
-                IRedis redishelper,
-                IEventPublisher eventPublisher,
-                ILogger logger) : base(
-                    account_goodsRepository,
-                    accounts_rolesRepository,
-               accounts_userrolesRepository,
-                accounts_usersRepository,
-               addpriceRepository,
-                 apartmentRepository,
-                bannerRepository,
-                 book_rdetailRepository,
-               book_roomRepository,
-               bookstateRepository,
-               card_typeRepository,
-               ccallRepository,
-             cdepartmentRepository,
-             cindustryRepository,
-             comm_unitRepository,
-                commissionRepository,
-               contactsRepository,
-                 cost_typeRepository,
-              cpostRepository,
-              cprotocolRepository,
-                cprotocolpriceRepository,
-                 cptypeRepository,
-               csystypeRepository,
-              customerRepository,
-                customerstateRepository,
-               customertypeRepository,
-              entryRepository,
-                exceedschemeRepository,
-               floor_ldRepository,
-                 floor_manageRepository,
-                ftsetRepository,
-               goodsRepository,
-                goods_accountRepository,
-                 guest_sourceRepository,
-               hour_roomRepository,
-                hourse_schemeRepository,
-                infoRepository,
-                 memberRepository,
-                memberstateRepository,
-                membertypeRepository,
-             menuRepository,
-               meth_payRepository,
-               modesRepository,
-                 mrecordsRepository,
-                mtpriceRepository,
-                occu_inforRepository,
-                occu_informxRepository,
-                order_inforRepository,
-                paymentmoneyRepository,
-                 price_typeRepository,
-                 printRepository,
-                 real_modeRepository,
-                real_stateRepository,
-                 remakerRepository,
-                 repairRepository,
-                rolemenuRepository,
-                room_featureRepository,
-                 room_numberRepository,
-                room_stateRepository,
-                room_typeRepository,
-                 room_type_imageRepository,
-                sale_manRepository,
-                 shiftRepository,
-                 shift_excRepository,
-                 shopinfoRepository,
-                sincethehousRepository,
-                suoroomRepository,
-                suosysRepository,
-                sysparamterRepository,
-               typeschemeRepository,
-                userinfoRepository,
-                usersRepository,
-               usertypeRepository,
-                zd_hourseRepository,
-                 dbcontext,
-                 redishelper,
-                 eventPublisher,
-                 logger)
+          IRepository<Domain.Accounts_Roles> Accounts_RolesRepository,
+          IRepository<Domain.Accounts_UserRoles> Accounts_UserRolesRepository,
+          IRepository<Domain.Accounts_Users> Accounts_UsersRepository,
+          IRepository<Domain.AddPrice> AddPriceRepository,
+          IRepository<Domain.apartment> apartmentRepository,
+          IRepository<Domain.banner> bannerRepository,
+          IRepository<Domain.Book_Rdetail> Book_RdetailRepository,
+          IRepository<Domain.book_room> book_roomRepository,
+          IRepository<Domain.BookState> BookStateRepository,
+          IRepository<Domain.breakfirstcoupon> breakfirstcouponRepository,
+          IRepository<Domain.card_type> card_typeRepository,
+          IRepository<Domain.cCall> cCallRepository,
+          IRepository<Domain.cDepartment> cDepartmentRepository,
+          IRepository<Domain.cIndustry> cIndustryRepository,
+          IRepository<Domain.comm_unit> comm_unitRepository,
+          IRepository<Domain.Commission> CommissionRepository,
+          IRepository<Domain.Contacts> ContactsRepository,
+          IRepository<Domain.cost_type> cost_typeRepository,
+          IRepository<Domain.cPost> cPostRepository,
+          IRepository<Domain.cprotocol> cprotocolRepository,
+          IRepository<Domain.cprotocolPrice> cprotocolPriceRepository,
+          IRepository<Domain.cpType> cpTypeRepository,
+          IRepository<Domain.credit> creditRepository,
+          IRepository<Domain.csysType> csysTypeRepository,
+          IRepository<Domain.customer> customerRepository,
+          IRepository<Domain.customerState> customerStateRepository,
+          IRepository<Domain.customerType> customerTypeRepository,
+          IRepository<Domain.Entry> EntryRepository,
+          IRepository<Domain.ExceedScheme> ExceedSchemeRepository,
+          IRepository<Domain.floor_ld> floor_ldRepository,
+          IRepository<Domain.floor_manage> floor_manageRepository,
+          IRepository<Domain.FtSet> FtSetRepository,
+          IRepository<Domain.Goods> GoodsRepository,
+          IRepository<Domain.goods_account> goods_accountRepository,
+          IRepository<Domain.guest_source> guest_sourceRepository,
+          IRepository<Domain.Hotel> HotelRepository,
+          IRepository<Domain.hour_room> hour_roomRepository,
+          IRepository<Domain.hourse_scheme> hourse_schemeRepository,
+          IRepository<Domain.info> infoRepository,
+          IRepository<Domain.log> logRepository,
+          IRepository<Domain.member> memberRepository,
+          IRepository<Domain.memberState> memberStateRepository,
+          IRepository<Domain.memberType> memberTypeRepository,
+          IRepository<Domain.Menu> MenuRepository,
+          IRepository<Domain.meth_pay> meth_payRepository,
+          IRepository<Domain.modes> modesRepository,
+          IRepository<Domain.mRecords> mRecordsRepository,
+          IRepository<Domain.mtPrice> mtPriceRepository,
+          IRepository<Domain.occu_infor> occu_inforRepository,
+          IRepository<Domain.occu_informx> occu_informxRepository,
+          IRepository<Domain.order_ext> order_extRepository,
+          IRepository<Domain.order_infor> order_inforRepository,
+          IRepository<Domain.paymentMoney> paymentMoneyRepository,
+          IRepository<Domain.price_type> price_typeRepository,
+          IRepository<Domain.print> printRepository,
+          IRepository<Domain.real_mode> real_modeRepository,
+          IRepository<Domain.real_state> real_stateRepository,
+          IRepository<Domain.receipt> receiptRepository,
+          IRepository<Domain.Remaker> RemakerRepository,
+          IRepository<Domain.Repair> RepairRepository,
+          IRepository<Domain.RoleMenu> RoleMenuRepository,
+          IRepository<Domain.room_feature> room_featureRepository,
+          IRepository<Domain.room_number> room_numberRepository,
+          IRepository<Domain.room_state> room_stateRepository,
+          IRepository<Domain.room_type> room_typeRepository,
+          IRepository<Domain.room_type_image> room_type_imageRepository,
+          IRepository<Domain.roomcoupon> roomcouponRepository,
+          IRepository<Domain.roomman> roommanRepository,
+          IRepository<Domain.roomrent> roomrentRepository,
+          IRepository<Domain.sale_man> sale_manRepository,
+          IRepository<Domain.Shift> ShiftRepository,
+          IRepository<Domain.Shift_Exc> Shift_ExcRepository,
+          IRepository<Domain.shopInfo> shopInfoRepository,
+          IRepository<Domain.Sincethehous> SincethehousRepository,
+          IRepository<Domain.SuoRoom> SuoRoomRepository,
+          IRepository<Domain.SuoSys> SuoSysRepository,
+          IRepository<Domain.SysParamter> SysParamterRepository,
+          IRepository<Domain.TypeScheme> TypeSchemeRepository,
+          IRepository<Domain.UserInfo> UserInfoRepository,
+          IRepository<Domain.Users> UsersRepository,
+          IRepository<Domain.userType> userTypeRepository,
+          IRepository<Domain.ZD_hourse> ZD_hourseRepository,
+        IDbContext dbcontext,
+        IRedis redishelper,
+        IEventPublisher eventPublisher,
+        ILogger logger) : base(
+                 account_goodsRepository,
+   Accounts_RolesRepository,
+   Accounts_UserRolesRepository,
+   Accounts_UsersRepository,
+   AddPriceRepository,
+   apartmentRepository,
+   bannerRepository,
+   Book_RdetailRepository,
+   book_roomRepository,
+   BookStateRepository,
+   breakfirstcouponRepository,
+   card_typeRepository,
+   cCallRepository,
+   cDepartmentRepository,
+   cIndustryRepository,
+   comm_unitRepository,
+   CommissionRepository,
+   ContactsRepository,
+   cost_typeRepository,
+   cPostRepository,
+   cprotocolRepository,
+   cprotocolPriceRepository,
+   cpTypeRepository,
+   creditRepository,
+   csysTypeRepository,
+   customerRepository,
+   customerStateRepository,
+   customerTypeRepository,
+   EntryRepository,
+   ExceedSchemeRepository,
+   floor_ldRepository,
+   floor_manageRepository,
+   FtSetRepository,
+   GoodsRepository,
+   goods_accountRepository,
+   guest_sourceRepository,
+   HotelRepository,
+   hour_roomRepository,
+   hourse_schemeRepository,
+   infoRepository,
+   logRepository,
+   memberRepository,
+   memberStateRepository,
+   memberTypeRepository,
+   MenuRepository,
+   meth_payRepository,
+   modesRepository,
+   mRecordsRepository,
+   mtPriceRepository,
+   occu_inforRepository,
+   occu_informxRepository,
+   order_extRepository,
+   order_inforRepository,
+   paymentMoneyRepository,
+   price_typeRepository,
+   printRepository,
+   real_modeRepository,
+   real_stateRepository,
+   receiptRepository,
+   RemakerRepository,
+   RepairRepository,
+   RoleMenuRepository,
+   room_featureRepository,
+   room_numberRepository,
+   room_stateRepository,
+   room_typeRepository,
+   room_type_imageRepository,
+   roomcouponRepository,
+   roommanRepository,
+   roomrentRepository,
+   sale_manRepository,
+   ShiftRepository,
+   Shift_ExcRepository,
+   shopInfoRepository,
+   SincethehousRepository,
+   SuoRoomRepository,
+   SuoSysRepository,
+   SysParamterRepository,
+   TypeSchemeRepository,
+   UserInfoRepository,
+   UsersRepository,
+   userTypeRepository,
+   ZD_hourseRepository,
+
+ dbcontext,
+ redishelper,
+ eventPublisher,
+ logger)
         {
         }
 
 
         public virtual bool CheckAccountUser(string username , string pwd)
         {
-            return _accounts_usersRepository.TableNoTracking.Where(s => s.UserName == username && s.Password == pwd).FirstOrDefault() != null;
+            return _Accounts_UsersRepository.TableNoTracking.Where(s => s.UserName == username && s.Password == pwd).FirstOrDefault() != null;
         }
 
         public virtual void AddAccountUser(Accounts_UsersDto user)
         {
             Domain.Accounts_Users accounts_Users = AutoMapper.Mapper.Map<Domain.Accounts_Users>(user);
-            _accounts_usersRepository.Insert(accounts_Users);
+            _Accounts_UsersRepository.Insert(accounts_Users);
         }
 
         public virtual void UpdateAccountUser(Accounts_UsersDto user)
         {
             Domain.Accounts_Users accounts_Users = AutoMapper.Mapper.Map<Domain.Accounts_Users>(user);
-            _accounts_usersRepository.Update(accounts_Users);
+            _Accounts_UsersRepository.Update(accounts_Users);
         }
 
         public virtual Accounts_UsersDto GetAccountUser(string username,string pwd)
         {
-            return _accounts_usersRepository.TableNoTracking.Where(s => s.UserName == username && s.Password == pwd).ProjectToFirstOrDefault<Accounts_UsersDto>();
+            return _Accounts_UsersRepository.TableNoTracking.Where(s => s.UserName == username && s.Password == pwd).ProjectToFirstOrDefault<Accounts_UsersDto>();
         }
 
         public virtual Accounts_UsersDto GetAccountUser(string username)
         {
-            return _accounts_usersRepository.TableNoTracking.Where(s => s.UserName == username).ProjectToFirstOrDefault<Accounts_UsersDto>();
+            return _Accounts_UsersRepository.TableNoTracking.Where(s => s.UserName == username).ProjectToFirstOrDefault<Accounts_UsersDto>();
         }
 
         public virtual Accounts_UsersDto GetAccountUser(int id)
         {
-            return _accounts_usersRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_UsersDto>();
+            return _Accounts_UsersRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_UsersDto>();
         }
 
-        public virtual UserMenus GetAccountMenus(int userid)
-        {
-            var accoutrole = _accounts_rolesRepository.TableNoTracking.Where(s => s.Id == userid).FirstOrDefault();
-            var rolemenus = _rolemenuRepository.TableNoTracking.Where(s => s.RoleID == accoutrole.RoleID).ToList();
+        //public virtual UserMenus GetAccountMenus(int userid)
+        //{
+        //    var accoutrole = _Accounts_RolesRepository.TableNoTracking.Where(s => s.Id == userid).FirstOrDefault();
+        //    var rolemenus = _rolemenuRepository.TableNoTracking.Where(s => s.RoleID == accoutrole.RoleID).ToList();
 
-            var parnetids = rolemenus.Select(s => s.Menu_pid).Distinct().ToArray();
+        //    var parnetids = rolemenus.Select(s => s.Menu_pid).Distinct().ToArray();
 
-            var parentmenus = _menuRepository.TableNoTracking.Where(s => parnetids.Contains(s.Id)).ProjectToList<MenuDto>();
+        //    var parentmenus = _MenuRepository.TableNoTracking.Where(s => parnetids.Contains(s.Id)).ProjectToList<MenuDto>();
 
-            UserMenus userMenus = new UserMenus { RoleId = accoutrole.RoleID, UserId = userid };
-            List<Menu> menus = new List<Menu>();
+        //    UserMenus userMenus = new UserMenus { RoleId = accoutrole.RoleID, UserId = userid };
+        //    List<Menu> menus = new List<Menu>();
          
-            foreach (var item in parentmenus)
-            {
-                var menu = new Menu { ParentMenu = item };
-                var childrenmenus = _rolemenuRepository.TableNoTracking.Where(s => s.RoleID == accoutrole.RoleID && s.Menu_pid == item.Id).ToList();
-                foreach(var chlilditem in childrenmenus)
-                {
-                    var clildmenu = _menuRepository.TableNoTracking.Where(s => s.Id == chlilditem.Menu_id).ProjectToFirst<MenuDto>();
-                    if(clildmenu!=null)
-                    {
-                        menu.ClildMenus.Add(clildmenu);
-                    }
-                }
-                menus.Add(menu);
+        //    foreach (var item in parentmenus)
+        //    {
+        //        var menu = new Menu { ParentMenu = item };
+        //        var childrenmenus = _rolemenuRepository.TableNoTracking.Where(s => s.RoleID == accoutrole.RoleID && s.Menu_pid == item.Id).ToList();
+        //        foreach(var chlilditem in childrenmenus)
+        //        {
+        //            var clildmenu = _MenuRepository.TableNoTracking.Where(s => s.Id == chlilditem.Menu_id).ProjectToFirst<MenuDto>();
+        //            if(clildmenu!=null)
+        //            {
+        //                menu.ClildMenus.Add(clildmenu);
+        //            }
+        //        }
+        //        menus.Add(menu);
                 
-            }
-            userMenus.Menus = menus;
-            return userMenus;
-        }
+        //    }
+        //    userMenus.Menus = menus;
+        //    return userMenus;
+        //}
 
 
         public virtual customerDto GetCustomer(string account)
@@ -258,7 +277,7 @@ namespace HoteManagement.Service.User
 
         public virtual List<CommissionDto> GetCommission(string account)
         {
-            var result = _commissionRepository.TableNoTracking;
+            var result = _CommissionRepository.TableNoTracking;
             if (!string.IsNullOrEmpty(account))
                 result = result.Where(s => s.Accounts == account);
 
@@ -267,12 +286,12 @@ namespace HoteManagement.Service.User
 
         public virtual CommissionDto GetCommissionById(int id)
         {
-            return _commissionRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirst<CommissionDto>();
+            return _CommissionRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirst<CommissionDto>();
         }
 
         public virtual List<CommissionDto> GetCommissionByIds(int[] ids)
         {
-            return _commissionRepository.TableNoTracking.Where(s => ids.Contains( s.Id)).ProjectToList<CommissionDto>();
+            return _CommissionRepository.TableNoTracking.Where(s => ids.Contains( s.Id)).ProjectToList<CommissionDto>();
         }
 
         public virtual void Addcprotocol(cprotocolDto cprotocol)
@@ -299,7 +318,7 @@ namespace HoteManagement.Service.User
 
         public virtual List<cprotocolPriceDto> GetcprotocolPrice(string accounts , int? cpid)
         {
-            var result = _cprotocolpriceRepository.TableNoTracking;
+            var result = _cprotocolPriceRepository.TableNoTracking;
             if (!string.IsNullOrEmpty(accounts))
                 result = result.Where(s => s.Accounts == accounts);
             if (cpid.HasValue)
@@ -312,18 +331,18 @@ namespace HoteManagement.Service.User
         public virtual void AddcprotocolPrice(cprotocolPriceDto cprotocolPrice)
         {
             Domain.cprotocolPrice model = AutoMapper.Mapper.Map<Domain.cprotocolPrice>(cprotocolPrice);
-            _cprotocolpriceRepository.Insert(model);
+            _cprotocolPriceRepository.Insert(model);
         }
 
         public virtual void UpdatecprotocolPrice(cprotocolPriceDto cprotocolPrice)
         {
             Domain.cprotocolPrice model = AutoMapper.Mapper.Map<Domain.cprotocolPrice>(cprotocolPrice);
-            _cprotocolpriceRepository.Update(model);
+            _cprotocolPriceRepository.Update(model);
         }
 
         public virtual List<ContactsDto> GetContacts(string account)
         {
-            var result = _contactsRepository.TableNoTracking;
+            var result = _ContactsRepository.TableNoTracking;
             if (!string.IsNullOrEmpty(account))
                 result = result.Where(s => s.Accounts == account);
 
@@ -351,7 +370,7 @@ namespace HoteManagement.Service.User
 
         public virtual memberStateDto GetMemberState(int id)
         {
-            return _memberstateRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<memberStateDto>();
+            return _memberStateRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<memberStateDto>();
         }
 
         public virtual List<memberTypeDto> GetmembertypeList(string name,int? stateid,int? mtype,DateTime? startime ,DateTime? endtime)
@@ -377,24 +396,24 @@ namespace HoteManagement.Service.User
 
         public virtual memberTypeDto Getmembertype(int id)
         {
-            return _membertypeRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirstOrDefault<memberTypeDto>();
+            return _memberTypeRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirstOrDefault<memberTypeDto>();
         }
 
         public virtual void AddMemberType(memberTypeDto memberType)
         {
             Domain.memberType model = AutoMapper.Mapper.Map<Domain.memberType>(memberType);
-            _membertypeRepository.Insert(model);
+            _memberTypeRepository.Insert(model);
         }
 
         public virtual void UpdateMemberType(memberTypeDto memberType)
         {
             Domain.memberType model = AutoMapper.Mapper.Map<Domain.memberType>(memberType);
-            _membertypeRepository.Update(model);
+            _memberTypeRepository.Update(model);
         }
 
         public virtual List<UsersDto> GetUserList(string userid,int? id,int? usertype)
         {
-            var result = _usersRepository.TableNoTracking;
+            var result = _UsersRepository.TableNoTracking;
             if (!string.IsNullOrEmpty(userid))
                 result = result.Where(s => s.userid == userid);
             if (usertype.HasValue)
@@ -408,7 +427,7 @@ namespace HoteManagement.Service.User
 
         public virtual List<userTypeDto> GetUserTypeList(int? typeid)
         {
-            var result = _usertypeRepository.TableNoTracking;
+            var result = _userTypeRepository.TableNoTracking;
             if (typeid.HasValue)
                 result = result.Where(s => s.typeid == typeid);
 
@@ -418,87 +437,87 @@ namespace HoteManagement.Service.User
         public virtual userTypeDto GetUserType(int id)
         {
 
-            return _usertypeRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirstOrDefault<userTypeDto>();
+            return _userTypeRepository.TableNoTracking.Where(s=>s.Id == id).ProjectToFirstOrDefault<userTypeDto>();
         }
 
         public virtual void AddUserType(userTypeDto userType)
         {
             Domain.userType model = AutoMapper.Mapper.Map<Domain.userType>(userType);
-            _usertypeRepository.Insert(model);
+            _userTypeRepository.Insert(model);
         }
 
         public virtual void UpdateUserType(userTypeDto userType)
         {
             Domain.userType model = AutoMapper.Mapper.Map<Domain.userType>(userType);
-            _usertypeRepository.Update(model);
+            _userTypeRepository.Update(model);
         }
 
         public virtual  List<mtPriceDto> GetMtPrice(int mtid)
         {
-            return _mtpriceRepository.TableNoTracking.Where(s => s.MTID == mtid).ProjectToList<mtPriceDto>();
+            return _mtPriceRepository.TableNoTracking.Where(s => s.MTID == mtid).ProjectToList<mtPriceDto>();
         }
 
 
         public virtual void AddAccountsUserRoles(Accounts_UserRolesDto AccountsUserRoles)
         {
             Domain.Accounts_UserRoles model = AutoMapper.Mapper.Map<Domain.Accounts_UserRoles>(AccountsUserRoles);
-            _accounts_userrolesRepository.Insert(model);
+            _Accounts_UserRolesRepository.Insert(model);
 
         }
 
         public virtual void UpdateAccountsUserRoles(Accounts_UserRolesDto AccountsUserRoles)
         {
             Domain.Accounts_UserRoles model = AutoMapper.Mapper.Map<Domain.Accounts_UserRoles>(AccountsUserRoles);
-            _accounts_userrolesRepository.Update(model);
+            _Accounts_UserRolesRepository.Update(model);
 
         }
 
         public virtual Accounts_UserRolesDto GetAccountsUserRolesById(int id)
         {
-            return _accounts_userrolesRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_UserRolesDto>();
+            return _Accounts_UserRolesRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_UserRolesDto>();
         }
 
         public virtual List<Accounts_UserRolesDto> GetAccountsUserRolesList()
         {
-            var result = _accounts_userrolesRepository.TableNoTracking;
+            var result = _Accounts_UserRolesRepository.TableNoTracking;
         
             return result.ProjectToList<Accounts_UserRolesDto>();
         }
 
         public virtual void DeleteAccountsUserRoles(int id)
         {
-            _accounts_userrolesRepository.Delete(id);
+            _Accounts_UserRolesRepository.Delete(id);
         }
 
         public virtual void AddAccounts_Roles(Accounts_RolesDto Accounts_Roles)
         {
             Domain.Accounts_Roles model = AutoMapper.Mapper.Map<Domain.Accounts_Roles>(Accounts_Roles);
-            _accounts_rolesRepository.Insert(model);
+            _Accounts_RolesRepository.Insert(model);
 
         }
 
         public virtual void UpdateAccounts_Roles(Accounts_RolesDto Accounts_Roles)
         {
             Domain.Accounts_Roles model = AutoMapper.Mapper.Map<Domain.Accounts_Roles>(Accounts_Roles);
-            _accounts_rolesRepository.Update(model);
+            _Accounts_RolesRepository.Update(model);
 
         }
 
         public virtual Accounts_RolesDto GetAccounts_RolesById(int id)
         {
-            return _accounts_rolesRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_RolesDto>();
+            return _Accounts_RolesRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_RolesDto>();
         }
 
         public virtual List<Accounts_UserRolesDto> GetAccounts_RolesList()
         {
-            var result = _accounts_rolesRepository.TableNoTracking;
+            var result = _Accounts_RolesRepository.TableNoTracking;
 
             return result.ProjectToList<Accounts_UserRolesDto>();
         }
 
         public virtual void DeleteAccounts_Roles(int id)
         {
-            _accounts_rolesRepository.Delete(id);
+            _Accounts_RolesRepository.Delete(id);
         }
     }
 }

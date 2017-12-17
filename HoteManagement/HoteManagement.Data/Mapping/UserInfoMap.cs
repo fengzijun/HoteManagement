@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public UserInfoMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.userID).HasMaxLength(50);
           this.Property(t => t.cardID).HasMaxLength(10);
           this.Property(t => t.sex);
@@ -32,6 +33,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.meark);
           this.Property(t => t.manageID);
           this.Property(t => t.truename).HasMaxLength(50);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

@@ -18,8 +18,10 @@ namespace HoteManagement.Data.Mapping
        public cDepartmentMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.cDName).HasMaxLength(50);
           this.Property(t => t.Reamrk).HasMaxLength(500);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

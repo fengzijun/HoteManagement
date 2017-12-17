@@ -18,12 +18,15 @@ namespace HoteManagement.Data.Mapping
        public paymentMoneyMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
+          this.Property(t => t.orderno).HasMaxLength(50);
           this.Property(t => t.pm_Money);
           this.Property(t => t.pm_MethPayid);
           this.Property(t => t.pm_Name).HasMaxLength(50);
           this.Property(t => t.pm_roomNumber).HasMaxLength(50);
           this.Property(t => t.pm_Date);
           this.Property(t => t.pm_Remaker);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

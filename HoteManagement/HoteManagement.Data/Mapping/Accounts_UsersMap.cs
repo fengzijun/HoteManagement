@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public Accounts_UsersMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.UserID).HasMaxLength(50);
           this.Property(t => t.UserName).HasMaxLength(50);
           this.Property(t => t.Password).HasMaxLength(50);
@@ -30,6 +31,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Activity);
           this.Property(t => t.UserType).HasMaxLength(2);
           this.Property(t => t.Style);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }

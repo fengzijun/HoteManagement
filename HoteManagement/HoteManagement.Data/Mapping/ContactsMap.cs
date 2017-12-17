@@ -18,6 +18,7 @@ namespace HoteManagement.Data.Mapping
        public ContactsMap()
        {
           this.HasKey(t => t.Id);
+          this.Property(t => t.hotelid);
           this.Property(t => t.Accounts).HasMaxLength(50);
           this.Property(t => t.cName).HasMaxLength(50);
           this.Property(t => t.Sex);
@@ -35,6 +36,7 @@ namespace HoteManagement.Data.Mapping
           this.Property(t => t.Likes).HasMaxLength(100);
           this.Property(t => t.Remark).HasMaxLength(500);
           this.Property(t => t.Post);
+          this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }
 }
